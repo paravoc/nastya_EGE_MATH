@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Анастасия • Повторение</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <div class="brand">Анастасия</div>
+        <label class="search">
+          <input id="searchInput" type="search" placeholder="Поиск по темам и материалам">
+        </label>
+      </header>
+
+      <nav class="filters" aria-label="Фильтры">
+        <button class="chip active" data-filter="all" type="button">Все</button>
+        <button class="chip" data-filter="algebra" type="button">Алгебра</button>
+        <button class="chip" data-filter="geometry" type="button">Геометрия</button>
+        <button class="chip" data-filter="analysis" type="button">Анализ</button>
+        <button class="chip" data-filter="ege" type="button">ЕГЭ</button>
+        <button class="chip" data-filter="informatics" type="button">Информатика</button>
+      </nav>
+
+      <main>
+        <section class="grid" id="lessonGrid">
+          <article class="card" data-category="geometry ege" data-search="векторы плоскости коллинеарность координаты длина скалярное произведение угол">
+            <div class="card-head">
+              <span class="badge">Геометрия</span>
+              <h2>Векторы</h2>
+            </div>
+            <ul class="points">
+              <li>Координаты вектора, длина, середина отрезка.</li>
+              <li>Коллинеарность, параллельность, сложение и вычитание.</li>
+              <li>Скалярное произведение и угол между векторами.</li>
+            </ul>
+            <div class="formula">AB = (x₂ - x₁; y₂ - y₁), |a| = √(x² + y²)</div>
+            <div class="files">
+              <a href="вектора плоскости.pdf">Векторы плоскости</a>
+              <a href="ВСЁ ВЕКТОРЫ.pdf">Все векторы</a>
+              <a href="ВСЁ ВЕКТОРЫ копия.pdf">Все векторы 2</a>
+              <a href="настя вектор.pdf">Вектор</a>
+              <a href="настя вектор плоскости.pdf">Вектор плоскости</a>
+            </div>
+          </article>
+
+          <article class="card" data-category="geometry ege" data-search="стереометрия призма пирамида угол расстояние сечение объем площадь">
+            <div class="card-head">
+              <span class="badge">Геометрия</span>
+              <h2>Стереометрия</h2>
+            </div>
+            <ul class="points">
+              <li>Прямые и плоскости в пространстве: параллельность и перпендикулярность.</li>
+              <li>Угол между прямыми, прямой и плоскостью, двумя плоскостями.</li>
+              <li>Объемы, площади, сечения и координатный подход.</li>
+            </ul>
+            <div class="formula">V = Sосн · h, Vпир = 1/3 Sосн · h</div>
+            <div class="files">
+              <a href="НАСТЯ СТЕРЕОМЕТРИЯ.pdf">Стереометрия</a>
+              <a href="Стереометрия конец.pdf">Стереометрия конец</a>
+            </div>
+          </article>
+
+          <article class="card" data-category="geometry ege" data-search="планиметрия треугольник окружность четырехугольник площадь теорема синусов косинусов">
+            <div class="card-head">
+              <span class="badge">Геометрия</span>
+              <h2>Планиметрия</h2>
+            </div>
+            <ul class="points">
+              <li>Треугольники: высоты, медианы, биссектрисы, окружности.</li>
+              <li>Четырехугольники: параллелограмм, трапеция, прямоугольник, квадрат.</li>
+              <li>Окружность: хорды, касательные, вписанные и центральные углы.</li>
+            </ul>
+            <div class="formula">S = 1/2 ab sinγ, c² = a² + b² - 2ab cosγ</div>
+            <div class="files">
+              <a href="хайп планиметрия.pdf">Планиметрия</a>
+              <a href="Пряумоугольник_плохо_квадрат_хорошо.pdf">Прямоугольник и квадрат</a>
+              <a href="Подготовка к ЕГЭ по математике.html">Навигатор ЕГЭ</a>
+            </div>
+          </article>
+
+          <article class="card" data-category="algebra ege" data-search="тригонометрия синус косинус тангенс формулы приведения двойного угла уравнения">
+            <div class="card-head">
+              <span class="badge">Алгебра</span>
+              <h2>Тригонометрия</h2>
+            </div>
+            <ul class="points">
+              <li>Основные тождества и формулы приведения.</li>
+              <li>Формулы суммы, разности, двойного и половинного угла.</li>
+              <li>Решение уравнений и отбор корней по промежутку.</li>
+            </ul>
+            <div class="formula">sin²x + cos²x = 1, tg x = sin x / cos x</div>
+            <div class="files">
+              <a href="ТРИГОНОМЕТРИЯ копия.jpg">Тригонометрия</a>
+              <a href="тригонометрия 3 копия.jpg">Тригонометрия 2</a>
+              <a href="тангенсы.jpg">Тангенсы</a>
+              <a href="сборник формул.html">Формулы ЕГЭ</a>
+            </div>
+          </article>
+
+          <article class="card" data-category="analysis ege" data-search="производная касательная экстремум монотонность наибольшее наименьшее">
+            <div class="card-head">
+              <span class="badge">Анализ</span>
+              <h2>Производная</h2>
+            </div>
+            <ul class="points">
+              <li>Правила вычисления производных и производные элементарных функций.</li>
+              <li>Исследование функции: возрастание, убывание, экстремумы.</li>
+              <li>Касательная, наибольшее и наименьшее значение на промежутке.</li>
+            </ul>
+            <div class="formula">f'(x) = 0 в критических точках</div>
+            <div class="files">
+              <a href="прроизводная 2 урок.jpg">Производная</a>
+              <a href="решение с анализом производной.html">Анализ производной</a>
+            </div>
+          </article>
+
+          <article class="card" data-category="analysis ege" data-search="интегралы первообразная неопределенный определенный площадь">
+            <div class="card-head">
+              <span class="badge">Анализ</span>
+              <h2>Интегралы</h2>
+            </div>
+            <ul class="points">
+              <li>Что такое первообразная и почему появляется константа C.</li>
+              <li>Таблица базовых интегралов и обратная связь с производной.</li>
+              <li>Смысл определенного интеграла и площадь под графиком.</li>
+            </ul>
+            <div class="formula">∫ f(x)dx = F(x) + C, где F'(x) = f(x)</div>
+            <div class="files">
+              <a href="ИНТЕГРАЛЫ.docx">Интегралы</a>
+            </div>
+          </article>
+
+          <article class="card" data-category="analysis algebra ege" data-search="параметры метод производной графический аналитический логарифм количество корней">
+            <div class="card-head">
+              <span class="badge">Параметры</span>
+              <h2>Параметры</h2>
+            </div>
+            <ul class="points">
+              <li>Аналитический, графический метод и метод производной.</li>
+              <li>Количество корней и исследование областей значений.</li>
+              <li>Отдельно: логарифмы и рациональные преобразования.</li>
+            </ul>
+            <div class="formula">Часто удобно выразить параметр через x</div>
+            <div class="files">
+              <a href="три метода.html">Три метода</a>
+              <a href="параметр логарифма 2 способа.pdf">Логарифмы</a>
+              <a href="парамаметры копия.jpg">Параметры 1</a>
+              <a href="пармаетры копия.jpg">Параметры 2</a>
+              <a href="решение с анализом производной.html">Метод производной</a>
+            </div>
+          </article>
+
+          <article class="card" data-category="analysis algebra ege" data-search="графики функций сдвиг растяжение отражение преобразование">
+            <div class="card-head">
+              <span class="badge">Алгебра</span>
+              <h2>Графики функций</h2>
+            </div>
+            <ul class="points">
+              <li>Как меняются графики при сдвиге, растяжении и отражении.</li>
+              <li>Понимание параметров a, b, c, d в общем виде.</li>
+              <li>Быстрая визуальная проверка решений и корней.</li>
+            </ul>
+            <div class="formula">y = a · f(b(x + c)) + d</div>
+            <div class="files">
+              <a href="графики.html">Графики</a>
+            </div>
+          </article>
+
+          <article class="card" data-category="algebra ege" data-search="виет высшие степени симметричные многочлены уравнения">
+            <div class="card-head">
+              <span class="badge">Алгебра</span>
+              <h2>Высшие Виеты</h2>
+            </div>
+            <ul class="points">
+              <li>Связь коэффициентов многочлена и корней.</li>
+              <li>Суммы и произведения корней для степеней выше второй.</li>
+              <li>Симметричные уравнения и полезные подстановки.</li>
+            </ul>
+            <div class="formula">x₁ + x₂ + ... + xₙ = -aₙ₋₁ / aₙ</div>
+            <div class="files">
+              <a href="высшие виеты.html">Виета и симметричные</a>
+            </div>
+          </article>
+
+          <article class="card" data-category="algebra ege" data-search="нод нок китайская теорема остатки бином ньютон теория чисел">
+            <div class="card-head">
+              <span class="badge">Алгебра</span>
+              <h2>Теория чисел</h2>
+            </div>
+            <ul class="points">
+              <li>НОД, НОК, делимость, остатки и арифметика по модулю.</li>
+              <li>Китайская теорема об остатках в базовой форме.</li>
+              <li>Бином Ньютона и формулы для степеней.</li>
+            </ul>
+            <div class="formula">x ≡ a (mod m), x ≡ b (mod n)</div>
+            <div class="files">
+              <a href="нок нод китай (2).html">Теория чисел</a>
+            </div>
+          </article>
+
+          <article class="card" data-category="algebra ege" data-search="прогрессии арифметическая геометрическая сумма n членов">
+            <div class="card-head">
+              <span class="badge">Алгебра</span>
+              <h2>Прогрессии</h2>
+            </div>
+            <ul class="points">
+              <li>Арифметическая и геометрическая прогрессии.</li>
+              <li>Формулы n-го члена и суммы первых n членов.</li>
+              <li>Задачи на проценты, вклады и рост последовательностей.</li>
+            </ul>
+            <div class="formula">aₙ = a₁ + d(n - 1), bₙ = b₁qⁿ⁻¹</div>
+            <div class="files">
+              <a href="ПРОГРЕССИИИИИ_ЕГЭ_МАТЕМАТИКА_копия.jpg">Прогрессии</a>
+            </div>
+          </article>
+
+          <article class="card" data-category="algebra ege" data-search="вероятность финансы проценты кредиты вклады платежи">
+            <div class="card-head">
+              <span class="badge">ЕГЭ</span>
+              <h2>Вероятность и финансы</h2>
+            </div>
+            <ul class="points">
+              <li>Классическая вероятность и простые комбинаторные идеи.</li>
+              <li>Финансовые задачи: кредиты, вклады, проценты, платежи.</li>
+              <li>Важна аккуратность в чтении условия и таблице вычислений.</li>
+            </ul>
+            <div class="formula">P(A) = m / n</div>
+            <div class="files">
+              <a href="ВЕРОЯТНОСТЬ.pdf">Вероятность</a>
+              <a href="финансы.jpg">Финансы</a>
+            </div>
+          </article>
+
+          <article class="card" data-category="ege" data-search="формулы егэ навигатор повторение подбор тем">
+            <div class="card-head">
+              <span class="badge">ЕГЭ</span>
+              <h2>Формулы и навигатор</h2>
+            </div>
+            <ul class="points">
+              <li>Быстрый сбор всех важных формул перед повторением.</li>
+              <li>Удобный вход в темы, если нужно пройтись по экзамену блоками.</li>
+              <li>Подходит как стартовая точка перед занятием.</li>
+            </ul>
+            <div class="formula">Повторение лучше начинать с слабых тем</div>
+            <div class="files">
+              <a href="сборник формул.html">Сборник формул</a>
+              <a href="Подготовка к ЕГЭ по математике.html">Подготовка к ЕГЭ</a>
+            </div>
+          </article>
+
+          <article class="card" data-category="informatics" data-search="информатика огэ задание 1 кодирование информации байты биты символы">
+            <div class="card-head">
+              <span class="badge">Информатика</span>
+              <h2>Задание 1</h2>
+            </div>
+            <ul class="points">
+              <li>Перевод битов, байтов, килобайт и мегабайт.</li>
+              <li>Кодирование символов и подсчет длины сообщения.</li>
+              <li>Внимательно считать пробелы и знаки препинания.</li>
+            </ul>
+            <div class="formula">1 байт = 8 бит</div>
+            <div class="files">
+              <a href="1 Задание ОГЭ ИНФОРМАТИКА.docx">Открыть</a>
+            </div>
+          </article>
+
+          <article class="card" data-category="informatics" data-search="информатика огэ задание 3 логика выражения x">
+            <div class="card-head">
+              <span class="badge">Информатика</span>
+              <h2>Задание 3</h2>
+            </div>
+            <ul class="points">
+              <li>Логические выражения, промежутки и четность.</li>
+              <li>Перевод записи НЕ, И, ИЛИ на обычный язык.</li>
+              <li>Удобно делать маленькую проверочную таблицу.</li>
+            </ul>
+            <div class="files">
+              <a href="3 ЗАДАНИЕ ОГЭ ПО ИНФОРМАТИКЕ.docx">Открыть</a>
+            </div>
+          </article>
+
+          <article class="card" data-category="informatics" data-search="информатика огэ задание 5 задание 6 исполнитель python if or">
+            <div class="card-head">
+              <span class="badge">Информатика</span>
+              <h2>Задание 5 и 6</h2>
+            </div>
+            <ul class="points">
+              <li>Исполнитель и обратный ход по командам.</li>
+              <li>Чтение кода на Python и разбор условий.</li>
+              <li>Важно понимать смысл `or`, а не запоминать ответы.</li>
+            </ul>
+            <div class="files">
+              <a href="5 ЗАДАНИЕ ОГЭ ИНФОРМАТИКА.docx">Открыть</a>
+            </div>
+          </article>
+
+          <article class="card" data-category="informatics" data-search="информатика огэ задание 7 ip адрес почта ссылка интернет">
+            <div class="card-head">
+              <span class="badge">Информатика</span>
+              <h2>Задание 7</h2>
+            </div>
+            <ul class="points">
+              <li>IP-адреса и ограничение чисел от 0 до 255.</li>
+              <li>Сборка адреса электронной почты.</li>
+              <li>Порядок элементов в ссылке на файл в интернете.</li>
+            </ul>
+            <div class="files">
+              <a href="Задание 7 ОГЭ ПО ИНформатике.docx">Открыть</a>
+            </div>
+          </article>
+
+          <article class="card" data-category="informatics" data-search="информатика огэ задание 8">
+            <div class="card-head">
+              <span class="badge">Информатика</span>
+              <h2>Задание 8</h2>
+            </div>
+            <ul class="points">
+              <li>Карточка оставлена как точка для будущего наполнения.</li>
+              <li>Можно добавить разбор, примеры и типовые ошибки.</li>
+            </ul>
+            <div class="files">
+              <a href="8 ЗАДАНИЕ ОГЭ ПО ИНФОРМАТИКЕ.docx">Открыть</a>
+            </div>
+          </article>
+
+          <article class="card" data-category="informatics" data-search="информатика огэ задание 10">
+            <div class="card-head">
+              <span class="badge">Информатика</span>
+              <h2>Задание 10</h2>
+            </div>
+            <ul class="points">
+              <li>Карточка оставлена как точка для будущего наполнения.</li>
+              <li>Можно быстро расширить после просмотра файла.</li>
+            </ul>
+            <div class="files">
+              <a href="10 ЗАДАНИЕ ОГЭ ИНФОРМАТИКА.docx">Открыть</a>
+            </div>
+          </article>
+
+          <article class="card" data-category="informatics" data-search="информатика огэ задание 14 excel электронные таблицы">
+            <div class="card-head">
+              <span class="badge">Информатика</span>
+              <h2>Задание 14</h2>
+            </div>
+            <ul class="points">
+              <li>Электронные таблицы и работа с данными.</li>
+              <li>Вычисления по формулам и чтение результата.</li>
+              <li>Полезно отдельно тренировать внимательность к диапазонам.</li>
+            </ul>
+            <div class="files">
+              <a href="task 14 (6).xls">Вариант 1</a>
+              <a href="task 14 (8).xls">Вариант 2</a>
+            </div>
+          </article>
+
+          <article class="card" data-category="informatics" data-search="информатика огэ задание 15 python while среднее арифметическое">
+            <div class="card-head">
+              <span class="badge">Информатика</span>
+              <h2>Задание 15</h2>
+            </div>
+            <ul class="points">
+              <li>Цикл `while`, накопление суммы и подсчет количества.</li>
+              <li>Проверка случая, когда подходящих чисел нет.</li>
+              <li>Среднее арифметическое и аккуратная структура программы.</li>
+            </ul>
+            <div class="files">
+              <a href="15 огэ информатика.docx">Открыть</a>
+            </div>
+          </article>
+        </section>
+
+        <div class="empty hidden" id="emptyState">Ничего не найдено</div>
+      </main>
+    </div>
+
+    <script>
+      const searchInput = document.getElementById("searchInput");
+      const chips = [...document.querySelectorAll(".chip")];
+      const cards = [...document.querySelectorAll(".card")];
+      const emptyState = document.getElementById("emptyState");
+      let activeFilter = "all";
+
+      function applyFilters() {
+        const query = searchInput.value.trim().toLowerCase();
+        let visibleCount = 0;
+
+        cards.forEach((card) => {
+          const category = card.dataset.category || "";
+          const haystack = `${card.innerText} ${card.dataset.search || ""}`.toLowerCase();
+          const categoryMatch = activeFilter === "all" || category.includes(activeFilter);
+          const queryMatch = !query || haystack.includes(query);
+          const visible = categoryMatch && queryMatch;
+          card.classList.toggle("hidden", !visible);
+          if (visible) visibleCount += 1;
+        });
+
+        emptyState.classList.toggle("hidden", visibleCount !== 0);
+      }
+
+      chips.forEach((chip) => {
+        chip.addEventListener("click", () => {
+          chips.forEach((item) => item.classList.remove("active"));
+          chip.classList.add("active");
+          activeFilter = chip.dataset.filter;
+          applyFilters();
+        });
+      });
+
+      searchInput.addEventListener("input", applyFilters);
+      applyFilters();
+    </script>
+  </body>
+</html>

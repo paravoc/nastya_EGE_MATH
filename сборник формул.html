@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Полный сборник формул ЕГЭ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0a0a2a 0%, #1a0a2e 50%, #0a1a2a 100%);
+            color: #fff;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #00ffff;
+            margin: 30px 0;
+            font-size: 2.5em;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+        
+        .category {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .category-title {
+            color: #00ff7f;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(0, 255, 127, 0.3);
+        }
+        
+        .formula-section {
+            margin: 20px 0;
+        }
+        
+        .section-title {
+            color: #ff6b6b;
+            font-size: 1.4em;
+            margin: 15px 0;
+        }
+        
+        .formula-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 15px;
+        }
+        
+        .formula-item {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 4px solid #8a2be2;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .formula {
+            font-size: 1.2em;
+            font-family: 'Cambria Math', serif;
+            color: #fff;
+            text-align: center;
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 5px;
+        }
+        
+        .formula-desc {
+            color: #b8b8ff;
+            font-size: 0.95em;
+            margin-top: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .formula-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .category {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Полный сборник формул ЕГЭ</h1>
+        
+        <!-- ТРИГОНОМЕТРИЯ -->
+        <div class="category">
+            <h2 class="category-title">ТРИГОНОМЕТРИЯ</h2>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Основные тождества</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">sin²α + cos²α = 1</div>
+                        <div class="formula-desc">Основное тригонометрическое тождество</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">1 + tg²α = 1/cos²α</div>
+                        <div class="formula-desc">Тождество с тангенсом</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">1 + ctg²α = 1/sin²α</div>
+                        <div class="formula-desc">Тождество с котангенсом</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">tgα = sinα/cosα</div>
+                        <div class="formula-desc">Определение тангенса</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">ctgα = cosα/sinα</div>
+                        <div class="formula-desc">Определение котангенса</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Формулы сложения</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">sin(α±β) = sinα·cosβ ± cosα·sinβ</div>
+                        <div class="formula-desc">Синус суммы/разности</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">cos(α±β) = cosα·cosβ ∓ sinα·sinβ</div>
+                        <div class="formula-desc">Косинус суммы/разности</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">tg(α±β) = (tgα ± tgβ)/(1 ∓ tgα·tgβ)</div>
+                        <div class="formula-desc">Тангенс суммы/разности</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">ctg(α±β) = (ctgα·ctgβ ∓ 1)/(ctgβ ± ctgα)</div>
+                        <div class="formula-desc">Котангенс суммы/разности</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Формулы двойного угла</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">sin2α = 2sinα·cosα</div>
+                        <div class="formula-desc">Синус двойного угла</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">cos2α = cos²α - sin²α</div>
+                        <div class="formula-desc">Косинус двойного угла</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">cos2α = 2cos²α - 1</div>
+                        <div class="formula-desc">Косинус через косинус</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">cos2α = 1 - 2sin²α</div>
+                        <div class="formula-desc">Косинус через синус</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">tg2α = 2tgα/(1 - tg²α)</div>
+                        <div class="formula-desc">Тангенс двойного угла</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">ctg2α = (ctg²α - 1)/(2ctgα)</div>
+                        <div class="formula-desc">Котангенс двойного угла</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Формулы половинного угла</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">sin²(α/2) = (1 - cosα)/2</div>
+                        <div class="formula-desc">Квадрат синуса половинного</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">cos²(α/2) = (1 + cosα)/2</div>
+                        <div class="formula-desc">Квадрат косинуса половинного</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">tg(α/2) = sinα/(1 + cosα)</div>
+                        <div class="formula-desc">Тангенс половинного угла</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">tg(α/2) = (1 - cosα)/sinα</div>
+                        <div class="formula-desc">Альтернативная формула</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Формулы преобразования сумм</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">sinα + sinβ = 2sin((α+β)/2)·cos((α-β)/2)</div>
+                        <div class="formula-desc">Сумма синусов</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">sinα - sinβ = 2cos((α+β)/2)·sin((α-β)/2)</div>
+                        <div class="formula-desc">Разность синусов</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">cosα + cosβ = 2cos((α+β)/2)·cos((α-β)/2)</div>
+                        <div class="formula-desc">Сумма косинусов</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">cosα - cosβ = -2sin((α+β)/2)·sin((α-β)/2)</div>
+                        <div class="formula-desc">Разность косинусов</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Формулы произведения</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">sinα·sinβ = ½[cos(α-β) - cos(α+β)]</div>
+                        <div class="formula-desc">Произведение синусов</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">cosα·cosβ = ½[cos(α-β) + cos(α+β)]</div>
+                        <div class="formula-desc">Произведение косинусов</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">sinα·cosβ = ½[sin(α+β) + sin(α-β)]</div>
+                        <div class="formula-desc">Произведение синуса на косинус</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ПРОГРЕССИИ -->
+        <div class="category">
+            <h2 class="category-title">ПРОГРЕССИИ</h2>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Арифметическая прогрессия</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">aₙ = a₁ + d(n-1)</div>
+                        <div class="formula-desc">n-й член прогрессии</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">Sₙ = (a₁ + aₙ)·n/2</div>
+                        <div class="formula-desc">Сумма n членов (через первый и последний)</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">Sₙ = [2a₁ + d(n-1)]·n/2</div>
+                        <div class="formula-desc">Сумма n членов (через первый и разность)</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">aₘ = (aₖ + aₚ)/2 (если m = (k+p)/2)</div>
+                        <div class="formula-desc">Характеристическое свойство</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">d = (aₙ - aₘ)/(n-m)</div>
+                        <div class="formula-desc">Разность прогрессии</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Геометрическая прогрессия</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">bₙ = b₁·qⁿ⁻¹</div>
+                        <div class="formula-desc">n-й член прогрессии</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">Sₙ = b₁·(qⁿ - 1)/(q - 1), q ≠ 1</div>
+                        <div class="formula-desc">Сумма n членов при q ≠ 1</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">Sₙ = b₁·n, q = 1</div>
+                        <div class="formula-desc">Сумма при q = 1</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">S = b₁/(1 - q), |q| < 1</div>
+                        <div class="formula-desc">Сумма бесконечно убывающей</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">bₘ² = bₖ·bₚ (если m = (k+p)/2)</div>
+                        <div class="formula-desc">Характеристическое свойство</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">q = ⁿ⁻ᵐ√(bₙ/bₘ)</div>
+                        <div class="formula-desc">Знаменатель прогрессии</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ЛОГАРИФМЫ -->
+        <div class="category">
+            <h2 class="category-title">ЛОГАРИФМЫ</h2>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Основные свойства</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">logₐ(b·c) = logₐb + logₐc</div>
+                        <div class="formula-desc">Логарифм произведения</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">logₐ(b/c) = logₐb - logₐc</div>
+                        <div class="formula-desc">Логарифм частного</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">logₐ(bⁿ) = n·logₐb</div>
+                        <div class="formula-desc">Логарифм степени</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">logₐb = 1/logₓa</div>
+                        <div class="formula-desc">Обратный логарифм</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">logₐb = logₓb / logₓa</div>
+                        <div class="formula-desc">Формула перехода к новому основанию</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">a^{logₐb} = b</div>
+                        <div class="formula-desc">Основное логарифмическое тождество</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Частные случаи</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">logₐ1 = 0</div>
+                        <div class="formula-desc">Логарифм единицы</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">logₐa = 1</div>
+                        <div class="formula-desc">Логарифм числа по своему основанию</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">logₐ(1/a) = -1</div>
+                        <div class="formula-desc">Логарифм обратного числа</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">log_{aⁿ}b = (1/n)·logₐb</div>
+                        <div class="formula-desc">Основание в степени</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">logₐⁿbᵐ = (m/n)·logₐb</div>
+                        <div class="formula-desc">Основание и аргумент в степенях</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Натуральные и десятичные логарифмы</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">ln e = 1</div>
+                        <div class="formula-desc">Натуральный логарифм e</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">ln 1 = 0</div>
+                        <div class="formula-desc">Натуральный логарифм 1</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">lg 10 = 1</div>
+                        <div class="formula-desc">Десятичный логарифм 10</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">lg 1 = 0</div>
+                        <div class="formula-desc">Десятичный логарифм 1</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">ln eˣ = x</div>
+                        <div class="formula-desc">Натуральный логарифм экспоненты</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">e^{ln x} = x (x > 0)</div>
+                        <div class="formula-desc">Экспонента натурального логарифма</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- СТЕПЕНИ И КОРНИ -->
+        <div class="category">
+            <h2 class="category-title">СТЕПЕНИ И КОРНИ</h2>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Свойства степеней</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">aⁿ·aᵐ = aⁿ⁺ᵐ</div>
+                        <div class="formula-desc">Умножение степеней</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">aⁿ/aᵐ = aⁿ⁻ᵐ (a ≠ 0)</div>
+                        <div class="formula-desc">Деление степеней</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">(aⁿ)ᵐ = aⁿᵐ</div>
+                        <div class="formula-desc">Степень степени</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">(a·b)ⁿ = aⁿ·bⁿ</div>
+                        <div class="formula-desc">Степень произведения</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">(a/b)ⁿ = aⁿ/bⁿ (b ≠ 0)</div>
+                        <div class="formula-desc">Степень частного</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">a⁻ⁿ = 1/aⁿ (a ≠ 0)</div>
+                        <div class="formula-desc">Отрицательная степень</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">a⁰ = 1 (a ≠ 0)</div>
+                        <div class="formula-desc">Нулевая степень</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">a^{1/n} = ⁿ√a</div>
+                        <div class="formula-desc">Степень как корень</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">a^{m/n} = ⁿ√(aᵐ) = (ⁿ√a)ᵐ</div>
+                        <div class="formula-desc">Дробная степень</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Свойства корней</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">ⁿ√(a·b) = ⁿ√a·ⁿ√b</div>
+                        <div class="formula-desc">Корень из произведения</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">ⁿ√(a/b) = ⁿ√a/ⁿ√b (b ≠ 0)</div>
+                        <div class="formula-desc">Корень из частного</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">ⁿ√(ᵐ√a) = ᵐⁿ√a</div>
+                        <div class="formula-desc">Корень из корня</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">ⁿ√(aᵐ) = (ⁿ√a)ᵐ</div>
+                        <div class="formula-desc">Степень под корнем</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">(ⁿ√a)ⁿ = a</div>
+                        <div class="formula-desc">Корень в степени</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">ⁿ√(aⁿ) = |a| (n чётное)</div>
+                        <div class="formula-desc">Корень чётной степени</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">ⁿ√(aⁿ) = a (n нечётное)</div>
+                        <div class="formula-desc">Корень нечётной степени</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Формулы сокращённого умножения</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">(a±b)² = a² ± 2ab + b²</div>
+                        <div class="formula-desc">Квадрат суммы/разности</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">a² - b² = (a-b)(a+b)</div>
+                        <div class="formula-desc">Разность квадратов</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">(a±b)³ = a³ ± 3a²b + 3ab² ± b³</div>
+                        <div class="formula-desc">Куб суммы/разности</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">a³ ± b³ = (a±b)(a² ∓ ab + b²)</div>
+                        <div class="formula-desc">Сумма/разность кубов</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">(a+b+c)² = a²+b²+c²+2ab+2ac+2bc</div>
+                        <div class="formula-desc">Квадрат трёх слагаемых</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">a²+b² = (a+b)² - 2ab</div>
+                        <div class="formula-desc">Сумма квадратов</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">a²+b² = (a-b)² + 2ab</div>
+                        <div class="formula-desc">Альтернативная формула</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ПРОИЗВОДНЫЕ -->
+        <div class="category">
+            <h2 class="category-title">ПРОИЗВОДНЫЕ</h2>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Основные производные</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">(c)' = 0</div>
+                        <div class="formula-desc">Производная константы</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">(x)' = 1</div>
+                        <div class="formula-desc">Производная x</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">(xⁿ)' = n·xⁿ⁻¹</div>
+                        <div class="formula-desc">Степенная функция</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">(√x)' = 1/(2√x)</div>
+                        <div class="formula-desc">Корень квадратный</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">(1/x)' = -1/x²</div>
+                        <div class="formula-desc">Обратная функция</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">(eˣ)' = eˣ</div>
+                        <div class="formula-desc">Экспонента</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">(aˣ)' = aˣ·ln a</div>
+                        <div class="formula-desc">Показательная функция</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">(ln x)' = 1/x</div>
+                        <div class="formula-desc">Натуральный логарифм</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">(logₐ x)' = 1/(x·ln a)</div>
+                        <div class="formula-desc">Логарифм по основанию a</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Тригонометрические производные</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">(sin x)' = cos x</div>
+                        <div class="formula-desc">Синус</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">(cos x)' = -sin x</div>
+                        <div class="formula-desc">Косинус</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">(tg x)' = 1/cos²x</div>
+                        <div class="formula-desc">Тангенс</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">(ctg x)' = -1/sin²x</div>
+                        <div class="formula-desc">Котангенс</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Правила дифференцирования</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">(u±v)' = u' ± v'</div>
+                        <div class="formula-desc">Производная суммы/разности</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">(c·u)' = c·u'</div>
+                        <div class="formula-desc">Производная произведения на константу</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">(u·v)' = u'·v + u·v'</div>
+                        <div class="formula-desc">Производная произведения</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">(u/v)' = (u'·v - u·v')/v²</div>
+                        <div class="formula-desc">Производная частного</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">(f(g(x)))' = f'(g(x))·g'(x)</div>
+                        <div class="formula-desc">Производная сложной функции</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ИНТЕГРАЛЫ -->
+        <div class="category">
+            <h2 class="category-title">ИНТЕГРАЛЫ</h2>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Основные интегралы</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">∫0 dx = C</div>
+                        <div class="formula-desc">Интеграл нуля</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">∫dx = x + C</div>
+                        <div class="formula-desc">Интеграл единицы</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">∫xⁿ dx = xⁿ⁺¹/(n+1) + C, n ≠ -1</div>
+                        <div class="formula-desc">Степенная функция</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">∫dx/x = ln|x| + C</div>
+                        <div class="formula-desc">Обратная функция</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">∫eˣ dx = eˣ + C</div>
+                        <div class="formula-desc">Экспонента</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">∫aˣ dx = aˣ/ln a + C</div>
+                        <div class="formula-desc">Показательная функция</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">∫sin x dx = -cos x + C</div>
+                        <div class="formula-desc">Синус</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">∫cos x dx = sin x + C</div>
+                        <div class="formula-desc">Косинус</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">∫dx/cos²x = tg x + C</div>
+                        <div class="formula-desc">Тангенс</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">∫dx/sin²x = -ctg x + C</div>
+                        <div class="formula-desc">Котангенс</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Методы интегрирования</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">∫[f(x)±g(x)]dx = ∫f(x)dx ± ∫g(x)dx</div>
+                        <div class="formula-desc">Интеграл суммы/разности</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">∫c·f(x)dx = c·∫f(x)dx</div>
+                        <div class="formula-desc">Вынесение константы</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">∫f(ax+b)dx = (1/a)·F(ax+b) + C</div>
+                        <div class="formula-desc">Линейная замена</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">∫f'(x)·g(x)dx = f(x)·g(x) - ∫f(x)·g'(x)dx</div>
+                        <div class="formula-desc">Интегрирование по частям</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Определённый интеграл</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">∫ₐᵇ f(x)dx = F(b) - F(a)</div>
+                        <div class="formula-desc">Формула Ньютона-Лейбница</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">∫ₐᵇ f(x)dx = -∫ᵇₐ f(x)dx</div>
+                        <div class="formula-desc">Перестановка пределов</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">∫ₐᵇ f(x)dx = ∫ₐᶜ f(x)dx + ∫ᶜᵇ f(x)dx</div>
+                        <div class="formula-desc">Аддитивность</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">∫ₐᵇ f(x)dx = ∫ₐᵇ f(a+b-x)dx</div>
+                        <div class="formula-desc">Симметрия</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ГЕОМЕТРИЯ (Планиметрия) -->
+        <div class="category">
+            <h2 class="category-title">ГЕОМЕТРИЯ: ПЛАНИМЕТРИЯ</h2>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Треугольник</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">S = ½·a·hₐ</div>
+                        <div class="formula-desc">Площадь через основание и высоту</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">S = ½·a·b·sinγ</div>
+                        <div class="formula-desc">Площадь через две стороны и угол</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">S = abc/(4R)</div>
+                        <div class="formula-desc">Площадь через стороны и радиус описанной окружности</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">S = p·r</div>
+                        <div class="formula-desc">Площадь через полупериметр и радиус вписанной</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">S = √[p(p-a)(p-b)(p-c)]</div>
+                        <div class="formula-desc">Формула Герона</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">a² = b² + c² - 2bc·cosα</div>
+                        <div class="formula-desc">Теорема косинусов</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">a/sinα = b/sinβ = c/sinγ = 2R</div>
+                        <div class="formula-desc">Теорема синусов</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">mₐ = ½√(2b²+2c²-a²)</div>
+                        <div class="formula-desc">Медиана к стороне a</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">lₐ = [2√(bcp(p-a))]/(b+c)</div>
+                        <div class="formula-desc">Биссектриса к стороне a</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">hₐ = 2S/a</div>
+                        <div class="formula-desc">Высота к стороне a</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Прямоугольный треугольник</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">c² = a² + b²</div>
+                        <div class="formula-desc">Теорема Пифагора</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">a = c·sinα = c·cosβ</div>
+                        <div class="formula-desc">Катет через гипотенузу и угол</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">h = ab/c</div>
+                        <div class="formula-desc">Высота к гипотенузе</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">a_c = a²/c, b_c = b²/c</div>
+                        <div class="formula-desc">Проекции катетов на гипотенузу</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">r = (a+b-c)/2</div>
+                        <div class="formula-desc">Радиус вписанной окружности</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">R = c/2</div>
+                        <div class="formula-desc">Радиус описанной окружности</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Четырёхугольники</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">S = a·h</div>
+                        <div class="formula-desc">Площадь параллелограмма</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">S = a·b·sinα</div>
+                        <div class="formula-desc">Площадь параллелограмма через стороны и угол</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">S = ½·d₁·d₂·sinφ</div>
+                        <div class="formula-desc">Площадь параллелограмма через диагонали</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">S = ½·d₁·d₂</div>
+                        <div class="formula-desc">Площадь ромба через диагонали</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">S = a²·sinα</div>
+                        <div class="formula-desc">Площадь ромба через сторону и угол</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">S = a·b</div>
+                        <div class="formula-desc">Площадь прямоугольника</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">d = √(a²+b²)</div>
+                        <div class="formula-desc">Диагональ прямоугольника</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">S = a²</div>
+                        <div class="formula-desc">Площадь квадрата</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">d = a√2</div>
+                        <div class="formula-desc">Диагональ квадрата</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">S = ½·(a+b)·h</div>
+                        <div class="formula-desc">Площадь трапеции</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">m = (a+b)/2</div>
+                        <div class="formula-desc">Средняя линия трапеции</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Окружность и круг</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">C = 2πR = πD</div>
+                        <div class="formula-desc">Длина окружности</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">S = πR² = πD²/4</div>
+                        <div class="formula-desc">Площадь круга</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">l = πRα/180° = Rα (α в радианах)</div>
+                        <div class="formula-desc">Длина дуги</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">S = πR²α/360° = ½R²α (α в радианах)</div>
+                        <div class="formula-desc">Площадь сектора</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">S = ½R²(α - sinα)</div>
+                        <div class="formula-desc">Площадь сегмента (α в радианах)</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">x² + y² = R²</div>
+                        <div class="formula-desc">Уравнение окружности</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Вписанные и описанные окружности</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">S = p·r</div>
+                        <div class="formula-desc">Любой описанный многоугольник</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">R = abc/(4S)</div>
+                        <div class="formula-desc">Треугольник: радиус описанной</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">r = S/p</div>
+                        <div class="formula-desc">Треугольник: радиус вписанной</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">d = √(a²+b²)</div>
+                        <div class="formula-desc">Прямоугольник: диаметр описанной</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">R = a/√2</div>
+                        <div class="formula-desc">Квадрат: радиус описанной</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">r = a/2</div>
+                        <div class="formula-desc">Квадрат: радиус вписанной</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Теоремы и свойства</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">AB·AC = AD·AE</div>
+                        <div class="formula-desc">Теорема о секущих</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">PA·PB = PC·PD</div>
+                        <div class="formula-desc">Теорема о пересекающихся хордах</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">PT² = PA·PB</div>
+                        <div class="formula-desc">Теорема о касательной и секущей</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">∠AOB = 2∠ACB</div>
+                        <div class="formula-desc">Центральный и вписанный углы</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">∠ACB = ½(∪AB)</div>
+                        <div class="formula-desc">Вписанный угол измеряется половиной дуги</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- СТЕРЕОМЕТРИЯ -->
+        <div class="category">
+            <h2 class="category-title">СТЕРЕОМЕТРИЯ</h2>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Призма</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">V = S·h</div>
+                        <div class="formula-desc">Объём прямой призмы</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">V = S·l·sinφ</div>
+                        <div class="formula-desc">Объём наклонной призмы</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">S_{бок} = P·h</div>
+                        <div class="formula-desc">Площадь боковой поверхности прямой призмы</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">S_{полн} = S_{бок} + 2S</div>
+                        <div class="formula-desc">Полная площадь</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">d = √(a²+b²+c²)</div>
+                        <div class="formula-desc">Диагональ прямоугольного параллелепипеда</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">V = a·b·c</div>
+                        <div class="formula-desc">Объём прямоугольного параллелепипеда</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">S_{полн} = 2(ab+ac+bc)</div>
+                        <div class="formula-desc">Полная площадь прямоугольного параллелепипеда</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Пирамида</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">V = ⅓·S·h</div>
+                        <div class="formula-desc">Объём пирамиды</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">V = ⅓·S₁·S₂·sinφ/h</div>
+                        <div class="formula-desc">Объём усечённой пирамиды</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">S_{бок} = ½·P·l</div>
+                        <div class="formula-desc">Площадь боковой поверхности правильной пирамиды</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">l² = h² + R²</div>
+                        <div class="formula-desc">Апофема правильной пирамиды</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">h² = l² - r²</div>
+                        <div class="formula-desc">Высота через апофему и радиус вписанной</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Цилиндр</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">V = πR²h</div>
+                        <div class="formula-desc">Объём цилиндра</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">S_{бок} = 2πRh</div>
+                        <div class="formula-desc">Площадь боковой поверхности</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">S_{полн} = 2πR(h+R)</div>
+                        <div class="formula-desc">Полная площадь</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">Осевое сечение: прямоугольник</div>
+                        <div class="formula-desc">Размеры: 2R × h</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Конус</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">V = ⅓·πR²h</div>
+                        <div class="formula-desc">Объём конуса</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">S_{бок} = πRl</div>
+                        <div class="formula-desc">Площадь боковой поверхности</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">S_{полн} = πR(l+R)</div>
+                        <div class="formula-desc">Полная площадь</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">l² = R² + h²</div>
+                        <div class="formula-desc">Образующая конуса</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">V = ⅓·πh(R²+Rr+r²)</div>
+                        <div class="formula-desc">Объём усечённого конуса</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">S_{бок} = πl(R+r)</div>
+                        <div class="formula-desc">Боковая площадь усечённого конуса</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Сфера и шар</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">S = 4πR²</div>
+                        <div class="formula-desc">Площадь сферы</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">V = ⁴/₃·πR³</div>
+                        <div class="formula-desc">Объём шара</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">S_{сегм} = 2πRh</div>
+                        <div class="formula-desc">Площадь сегмента сферы</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">V_{сегм} = πh²(R - h/3)</div>
+                        <div class="formula-desc">Объём сегмента шара</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">S_{сл} = 2πRh</div>
+                        <div class="formula-desc">Площадь слоя сферы</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">V_{сл} = πh(3a²+3b²+h²)/6</div>
+                        <div class="formula-desc">Объём шарового слоя</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">x²+y²+z² = R²</div>
+                        <div class="formula-desc">Уравнение сферы</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Комбинации тел</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">R = √[(a²+b²+c²)/4]</div>
+                        <div class="formula-desc">Радиус описанной сферы около прямоугольного параллелепипеда</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">R = a√3/2</div>
+                        <div class="formula-desc">Радиус описанной сферы около куба</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">r = a/2</div>
+                        <div class="formula-desc">Радиус вписанной сферы в куб</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">R = √[h²+(a/√3)²]/2</div>
+                        <div class="formula-desc">Радиус описанной сферы около правильной треугольной пирамиды</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">Вписанный конус в цилиндр: h_{кон} = h_{цил}, R_{кон} = R_{цил}</div>
+                        <div class="formula-desc">Совпадение высот и радиусов</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ВЕКТОРЫ И КООРДИНАТЫ -->
+        <div class="category">
+            <h2 class="category-title">ВЕКТОРЫ И КООРДИНАТЫ</h2>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Векторы на плоскости</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">|\vec{a}| = √(x₁² + y₁²)</div>
+                        <div class="formula-desc">Длина вектора</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">\vec{a} ± \vec{b} = (x₁±x₂, y₁±y₂)</div>
+                        <div class="formula-desc">Сложение/вычитание векторов</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">k·\vec{a} = (kx₁, ky₁)</div>
+                        <div class="formula-desc">Умножение вектора на число</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">\vec{a}·\vec{b} = x₁x₂ + y₁y₂</div>
+                        <div class="formula-desc">Скалярное произведение</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">\vec{a}·\vec{b} = |\vec{a}|·|\vec{b}|·cosφ</div>
+                        <div class="formula-desc">Скалярное произведение через угол</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">cosφ = (x₁x₂+y₁y₂)/[√(x₁²+y₁²)·√(x₂²+y₂²)]</div>
+                        <div class="formula-desc">Косинус угла между векторами</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">\vec{a}⊥\vec{b} ⇔ x₁x₂ + y₁y₂ = 0</div>
+                        <div class="formula-desc">Условие перпендикулярности</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">\vec{a}∥\vec{b} ⇔ x₁/x₂ = y₁/y₂</div>
+                        <div class="formula-desc">Условие коллинеарности</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Векторы в пространстве</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">|\vec{a}| = √(x₁² + y₁² + z₁²)</div>
+                        <div class="formula-desc">Длина вектора в пространстве</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">\vec{a}·\vec{b} = x₁x₂ + y₁y₂ + z₁z₂</div>
+                        <div class="formula-desc">Скалярное произведение</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">[\vec{a}×\vec{b}] = (y₁z₂-z₁y₂, z₁x₂-x₁z₂, x₁y₂-y₁x₂)</div>
+                        <div class="formula-desc">Векторное произведение</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">|[\vec{a}×\vec{b}]| = |\vec{a}|·|\vec{b}|·sinφ</div>
+                        <div class="formula-desc">Модуль векторного произведения</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">S_{△} = ½·|[\vec{AB}×\vec{AC}]|</div>
+                        <div class="formula-desc">Площадь треугольника через векторы</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">V_{пар} = |(\vec{a}·[\vec{b}×\vec{c}])|</div>
+                        <div class="formula-desc">Объём параллелепипеда</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Координаты и расстояния</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">M((x₁+x₂)/2, (y₁+y₂)/2)</div>
+                        <div class="formula-desc">Координаты середины отрезка</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">AB = √[(x₂-x₁)² + (y₂-y₁)²]</div>
+                        <div class="formula-desc">Расстояние между точками на плоскости</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">AB = √[(x₂-x₁)²+(y₂-y₁)²+(z₂-z₁)²]</div>
+                        <div class="formula-desc">Расстояние между точками в пространстве</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">d = |Ax₀+By₀+C|/√(A²+B²)</div>
+                        <div class="formula-desc">Расстояние от точки до прямой на плоскости</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">d = |Ax₀+By₀+Cz₀+D|/√(A²+B²+C²)</div>
+                        <div class="formula-desc">Расстояние от точки до плоскости</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">x = x₁ + λ(x₂-x₁), y = y₁ + λ(y₂-y₁)</div>
+                        <div class="formula-desc">Параметрическое уравнение прямой</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">(x-x₁)/(x₂-x₁) = (y-y₁)/(y₂-y₁)</div>
+                        <div class="formula-desc">Каноническое уравнение прямой</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ТЕОРИЯ ВЕРОЯТНОСТЕЙ -->
+        <div class="category">
+            <h2 class="category-title">ТЕОРИЯ ВЕРОЯТНОСТЕЙ</h2>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Основные формулы</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">P(A) = m/n</div>
+                        <div class="formula-desc">Классическое определение вероятности</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">P(A) = 1 - P(Ā)</div>
+                        <div class="formula-desc">Вероятность противоположного события</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">P(A∪B) = P(A) + P(B) - P(A∩B)</div>
+                        <div class="formula-desc">Вероятность объединения событий</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">P(A∪B) = P(A) + P(B) (несовместные)</div>
+                        <div class="formula-desc">Для несовместных событий</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">P(A∩B) = P(A)·P(B) (независимые)</div>
+                        <div class="formula-desc">Вероятность произведения независимых событий</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">P(A∩B) = P(A)·P(B|A)</div>
+                        <div class="formula-desc">Вероятность произведения зависимых событий</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">P(B|A) = P(A∩B)/P(A), P(A)≠0</div>
+                        <div class="formula-desc">Условная вероятность</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Формула полной вероятности</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">P(A) = ∑P(Hᵢ)·P(A|Hᵢ)</div>
+                        <div class="formula-desc">Формула полной вероятности</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">P(Hₖ|A) = P(Hₖ)·P(A|Hₖ)/∑P(Hᵢ)·P(A|Hᵢ)</div>
+                        <div class="formula-desc">Формула Байеса</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="formula-section">
+                <h3 class="section-title">Схема Бернулли</h3>
+                <div class="formula-grid">
+                    <div class="formula-item">
+                        <div class="formula">Pₙ(k) = Cₙᵏ·pᵏ·qⁿ⁻ᵏ</div>
+                        <div class="formula-desc">Формула Бернулли</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">Cₙᵏ = n!/(k!(n-k)!)</div>
+                        <div class="formula-desc">Биномиальный коэффициент</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">M(X) = n·p</div>
+                        <div class="formula-desc">Математическое ожидание биномиального распределения</div>
+                    </div>
+                    <div class="formula-item">
+                        <div class="formula">D(X) = n·p·q</div>
+                        <div class="formula-desc">Дисперсия биномиального распределения</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

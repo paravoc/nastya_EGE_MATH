@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Метод производной: Задачи с параметрами</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- MathJax для отображения математических формул -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        :root {
+            --primary: #4361ee;
+            --primary-light: #6c8aff;
+            --secondary: #3a0ca3;
+            --accent: #f72585;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --success: #4cc9f0;
+            --warning: #f8961e;
+            --danger: #e63946;
+            --shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            color: var(--dark);
+            line-height: 1.7;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        /* Шапка */
+        header {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .math-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            font-size: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cambria', 'Times New Roman', serif;
+            font-weight: bold;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto 25px;
+            font-weight: 300;
+        }
+
+        .problem-type {
+            font-size: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.15);
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            margin-top: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            font-family: 'Cambria', 'Times New Roman', serif;
+        }
+
+        /* Основное содержимое */
+        .content-area {
+            padding: 50px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary-light);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title i {
+            color: var(--accent);
+            background-color: rgba(248, 37, 133, 0.1);
+            padding: 12px;
+            border-radius: 10px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Блоки с объяснением */
+        .explanation {
+            background-color: #f8f9ff;
+            border-radius: var(--radius);
+            padding: 35px;
+            margin-bottom: 35px;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--primary);
+            transition: var(--transition);
+        }
+
+        .explanation:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .explanation-title {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .explanation-title i {
+            color: var(--accent);
+        }
+
+        .explanation p {
+            margin-bottom: 20px;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+
+        /* Математические блоки */
+        .math-block {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 25px 0;
+            text-align: center;
+            font-size: 1.4rem;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e9ecef;
+            overflow-x: auto;
+            font-family: 'Cambria', 'Times New Roman', serif;
+        }
+
+        .math-inline {
+            font-family: 'Cambria', 'Times New Roman', serif;
+            font-size: 1.2em;
+            color: var(--secondary);
+            background-color: rgba(67, 97, 238, 0.05);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* Пошаговый алгоритм */
+        .algorithm {
+            background: linear-gradient(135deg, #fff9f0 0%, #fff0e6 100%);
+            border-radius: var(--radius);
+            padding: 30px;
+            margin: 35px 0;
+            border-left: 5px solid var(--warning);
+        }
+
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            transition: var(--transition);
+        }
+
+        .step:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--success);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .step-content p {
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+
+        /* Пример задачи */
+        .example {
+            background-color: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--accent);
+        }
+
+        .example-title {
+            color: var(--secondary);
+            font-size: 1.7rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .example-title i {
+            color: var(--accent);
+        }
+
+        .example-problem {
+            background-color: #f0f5ff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            font-size: 1.2rem;
+        }
+
+        /* График */
+        .graph-container {
+            background-color: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: var(--shadow);
+            border: 1px solid #e9ecef;
+        }
+
+        .graph-title {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .interactive-panel {
+            background-color: #f0f5ff;
+            border-radius: var(--radius);
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin: 25px 0;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .param-slider {
+            flex: 1;
+            height: 12px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: linear-gradient(to right, #dee2e6, var(--primary));
+            border-radius: 10px;
+            outline: none;
+        }
+
+        .param-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--accent);
+            cursor: pointer;
+            border: 4px solid white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+        }
+
+        .param-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(247, 37, 133, 0.5);
+        }
+
+        .param-value {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--secondary);
+            min-width: 90px;
+            text-align: center;
+            background-color: rgba(67, 97, 238, 0.1);
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-family: 'Cambria', 'Times New Roman', serif;
+        }
+
+        .result-box {
+            background-color: #e8f4fc;
+            border: 1px solid #b6d4fe;
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 25px;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        /* Ответ */
+        .answer {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            margin: 40px 0;
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 700;
+            box-shadow: var(--shadow);
+        }
+
+        /* Подвал */
+        footer {
+            text-align: center;
+            padding: 35px;
+            margin-top: 50px;
+            border-top: 1px solid #e9ecef;
+            color: var(--gray);
+            font-size: 1rem;
+            background-color: #f8f9fa;
+        }
+
+        .footer-note {
+            max-width: 700px;
+            margin: 15px auto;
+            font-style: italic;
+            color: #495057;
+            font-size: 1.1rem;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .content-area {
+                padding: 30px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .problem-type {
+                font-size: 1.2rem;
+                padding: 10px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .math-block {
+                font-size: 1.1rem;
+                padding: 20px;
+            }
+            
+            .slider-container {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 20px;
+            }
+            
+            .step {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="math-background">f(x) = a·g(x)</div>
+            <div class="header-content">
+                <h1><i class="fas fa-chart-line"></i> Метод производной для задач с параметрами</h1>
+                <p class="subtitle">Подробное руководство по решению уравнений вида \( f(x) = a \cdot g(x) \) с использованием производной</p>
+                <div class="problem-type">\( f(x) = a \cdot g(x) \)</div>
+            </div>
+        </header>
+        
+        <main class="content-area">
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-info-circle"></i> Суть метода</h2>
+                
+                <div class="explanation">
+                    <h3 class="explanation-title"><i class="fas fa-lightbulb"></i> Основная идея</h3>
+                    <p>Когда уравнение имеет вид <span class="math-inline">\( f(x) = a \cdot g(x) \)</span>, мы можем переписать его как <span class="math-inline">\( a = \frac{f(x)}{g(x)} \)</span> (при условии <span class="math-inline">\( g(x) \neq 0 \)</span>).</p>
+                    
+                    <div class="math-block">
+                        \[
+                        \text{Дано: } f(x) = a \cdot g(x) \quad \Rightarrow \quad a = \frac{f(x)}{g(x)} \quad (\text{при } g(x) \neq 0)
+                        \]
+                    </div>
+                    
+                    <p>Задача сводится к нахождению всех значений параметра <span class="math-inline">\( a \)</span>, при которых уравнение <span class="math-inline">\( h(x) = a \)</span> имеет хотя бы одно решение на заданном промежутке, где <span class="math-inline">\( h(x) = \frac{f(x)}{g(x)} \)</span>.</p>
+                    
+                    <p>Таким образом, мы исследуем функцию <span class="math-inline">\( h(x) \)</span> с помощью производной, чтобы найти множество её значений на заданном промежутке.</p>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-list-ol"></i> Алгоритм решения</h2>
+                
+                <div class="algorithm">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Преобразуем уравнение</h4>
+                            <p>Выражаем параметр <span class="math-inline">\( a \)</span> через <span class="math-inline">\( x \):</span> <span class="math-inline">\( a = h(x) = \frac{f(x)}{g(x)} \)</span>.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Ищем область определения</h4>
+                            <p>Учитываем ОДЗ исходного уравнения (<span class="math-inline">\( g(x) \neq 0 \)</span>) и заданный промежуток для <span class="math-inline">\( x \)</span>.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Исследуем функцию</h4>
+                            <p>Находим производную <span class="math-inline">\( h'(x) \)</span>, критические точки, промежутки возрастания и убывания функции <span class="math-inline">\( h(x) \)</span>.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Находим множество значений</h4>
+                            <p>Вычисляем значения функции на концах промежутка и в критических точках. Определяем наименьшее и наибольшее значения функции.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Формулируем ответ</h4>
+                            <p>Определяем все значения <span class="math-inline">\( a \)</span>, при которых уравнение имеет хотя бы одно решение на заданном промежутке.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-pen"></i> Пример задачи</h2>
+                
+                <div class="example">
+                    <h3 class="example-title"><i class="fas fa-question-circle"></i> Условие</h3>
+                    <div class="example-problem">
+                        <p>Найдите все значения <span class="math-inline">\( a \)</span>, при которых уравнение</p>
+                        <div class="math-block">
+                            \[
+                            \sin x = a(\cos x + 2)
+                            \]
+                        </div>
+                        <p>имеет хотя бы одно решение на отрезке <span class="math-inline">\( \left[0; \frac{\pi}{2}\right] \)</span>.</p>
+                    </div>
+                    
+                    <h3 class="example-title" style="margin-top: 30px;"><i class="fas fa-cogs"></i> Решение</h3>
+                    
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Преобразуем уравнение</h4>
+                            <p>Выражаем параметр <span class="math-inline">\( a \)</span>:</p>
+                            <div class="math-block">
+                                \[
+                                \sin x = a(\cos x + 2) \quad \Rightarrow \quad a = \frac{\sin x}{\cos x + 2}
+                                \]
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Область определения</h4>
+                            <p>Знаменатель <span class="math-inline">\( \cos x + 2 \)</span> никогда не равен нулю, так как <span class="math-inline">\( \cos x \geq 0 \)</span> на отрезке <span class="math-inline">\( \left[0; \frac{\pi}{2}\right] \)</span>, следовательно <span class="math-inline">\( \cos x + 2 \geq 2 \)</span>.</p>
+                            <p>Таким образом, ОДЗ: <span class="math-inline">\( x \in \left[0; \frac{\pi}{2}\right] \)</span>.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Исследуем функцию</h4>
+                            <p>Рассмотрим функцию <span class="math-inline">\( h(x) = \frac{\sin x}{\cos x + 2} \)</span> на отрезке <span class="math-inline">\( \left[0; \frac{\pi}{2}\right] \)</span>.</p>
+                            <p>Найдём производную:</p>
+                            <div class="math-block">
+                                \[
+                                h'(x) = \frac{\cos x (\cos x + 2) - \sin x (-\sin x)}{(\cos x + 2)^2} = \frac{\cos^2 x + 2\cos x + \sin^2 x}{(\cos x + 2)^2} = \frac{1 + 2\cos x}{(\cos x + 2)^2}
+                                \]
+                            </div>
+                            <p>На отрезке <span class="math-inline">\( \left[0; \frac{\pi}{2}\right] \)</span> производная <span class="math-inline">\( h'(x) > 0 \)</span>, так как <span class="math-inline">\( \cos x \geq 0 \)</span>. Значит, функция <span class="math-inline">\( h(x) \)</span> возрастает на всём отрезке.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Находим множество значений</h4>
+                            <p>Вычислим значения функции на концах отрезка:</p>
+                            <div class="math-block">
+                                \[
+                                h(0) = \frac{\sin 0}{\cos 0 + 2} = \frac{0}{1 + 2} = 0
+                                \]
+                                \[
+                                h\left(\frac{\pi}{2}\right) = \frac{\sin \frac{\pi}{2}}{\cos \frac{\pi}{2} + 2} = \frac{1}{0 + 2} = \frac{1}{2}
+                                \]
+                            </div>
+                            <p>Так как функция возрастает на отрезке, она принимает все значения от <span class="math-inline">\( h(0) = 0 \)</span> до <span class="math-inline">\( h\left(\frac{\pi}{2}\right) = \frac{1}{2} \)</span>.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-chart-line"></i> Графическая иллюстрация</h2>
+                
+                <div class="graph-container">
+                    <h3 class="graph-title">График функции \( h(x) = \frac{\sin x}{\cos x + 2} \)</h3>
+                    <canvas id="functionGraph" height="350"></canvas>
+                    
+                    <div class="interactive-panel">
+                        <p>Измените значение параметра <span class="math-inline">\( a \)</span> и посмотрите, при каких значениях горизонтальная прямая <span class="math-inline">\( y = a \)</span> пересекает график функции на отрезке <span class="math-inline">\( \left[0; \frac{\pi}{2}\right] \)</span>:</p>
+                        
+                        <div class="slider-container">
+                            <span style="font-size: 1.2rem;">Параметр \( a = \)</span>
+                            <input type="range" min="0" max="0.6" step="0.01" value="0.25" class="param-slider" id="parameterSlider">
+                            <span class="param-value" id="parameterValue">0.25</span>
+                        </div>
+                        
+                        <div class="result-box" id="resultBox">
+                            При \( a = 0.25 \) уравнение имеет решение на отрезке \( \left[0; \frac{\pi}{2}\right] \).
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-check-circle"></i> Ответ</h2>
+                
+                <div class="answer">
+                    <p>Уравнение \( \sin x = a(\cos x + 2) \) имеет хотя бы одно решение на отрезке \( \left[0; \frac{\pi}{2}\right] \) при</p>
+                    <div class="math-block" style="background-color: rgba(255, 255, 255, 0.2); border: none; margin: 20px 0;">
+                        \[
+                        a \in \left[0, \frac{1}{2}\right]
+                        \]
+                    </div>
+                    <p>То есть для всех значений параметра \( a \) от 0 до \( \frac{1}{2} \) включительно.</p>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>Универсальное решение путём анализа с помощью производной</p>
+            <p class="footer-note">"Завтра повторим всё ещё раз" - Смирнов Даниил</p>
+            <p style="margin-top: 20px;">
+                <i class="fas fa-graduation-cap" style="color: var(--primary); margin: 0 10px;"></i>                <i class="fas fa-graduation-cap" style="color: var(--primary); margin: 0 10px;"></i>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Инициализация графика
+        let functionChart;
+        
+        // Элементы управления
+        const parameterSlider = document.getElementById('parameterSlider');
+        const parameterValue = document.getElementById('parameterValue');
+        const resultBox = document.getElementById('resultBox');
+        
+        // Функция для обновления значения параметра
+        function updateParameterValue() {
+            const a = parseFloat(parameterSlider.value);
+            parameterValue.textContent = a.toFixed(2);
+            
+            // Обновляем текст результата
+            if (a >= 0 && a <= 0.5) {
+                resultBox.innerHTML = `При \( a = ${a.toFixed(2)} \) уравнение имеет решение на отрезке \( \\left[0; \\frac{\\pi}{2}\\right] \).`;
+            } else {
+                resultBox.innerHTML = `При \( a = ${a.toFixed(2)} \) уравнение <strong>НЕ</strong> имеет решений на отрезке \( \\left[0; \\frac{\\pi}{2}\\right] \).`;
+            }
+            
+            // Обновляем график
+            updateChart();
+        }
+        
+        // Слушатель события для слайдера
+        parameterSlider.addEventListener('input', updateParameterValue);
+        
+        // Создание графика
+        function createChart() {
+            const ctx = document.getElementById('functionGraph').getContext('2d');
+            
+            // Данные для функции h(x) = sin(x)/(cos(x)+2)
+            const xValues = [];
+            const yValues = [];
+            const step = Math.PI/2 / 50;
+            
+            for (let x = 0; x <= Math.PI/2; x += step) {
+                xValues.push(x);
+                yValues.push(Math.sin(x)/(Math.cos(x)+2));
+            }
+            
+            functionChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: xValues.map(x => (x/Math.PI).toFixed(2) + 'π'),
+                    datasets: [
+                        {
+                            label: 'h(x) = sin(x)/(cos(x)+2)',
+                            data: yValues,
+                            borderColor: '#4361ee',
+                            backgroundColor: 'rgba(67, 97, 238, 0.1)',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.3,
+                            pointRadius: 0
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Функция h(x) на отрезке [0; π/2]',
+                            font: {
+                                size: 18
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const x = context.parsed.x;
+                                    const y = context.parsed.y;
+                                    return `x = ${(x/Math.PI).toFixed(2)}π, h(x) = ${y.toFixed(3)}`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'x (в долях π)',
+                                font: {
+                                    size: 14
+                                }
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            },
+                            ticks: {
+                                callback: function(value, index, values) {
+                                    // Показываем только каждую 10-ю метку
+                                    if (index % 10 === 0) {
+                                        return value;
+                                    }
+                                    return '';
+                                }
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'h(x)',
+                                font: {
+                                    size: 14
+                                }
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            },
+                            min: 0,
+                            max: 0.6
+                        }
+                    }
+                }
+            });
+            
+            updateChart();
+        }
+        
+        // Обновление графика
+        function updateChart() {
+            const a = parseFloat(parameterSlider.value);
+            
+            // Удаляем предыдущую горизонтальную линию, если она есть
+            if (functionChart.data.datasets.length > 1) {
+                functionChart.data.datasets.pop();
+            }
+            
+            // Добавляем горизонтальную линию y = a
+            functionChart.data.datasets.push({
+                label: `y = ${a.toFixed(2)} (параметр a)`,
+                data: Array(functionChart.data.labels.length).fill(a),
+                borderColor: '#f72585',
+                backgroundColor: 'rgba(247, 37, 133, 0.1)',
+                borderWidth: 2,
+                borderDash: [5, 5],
+                fill: false,
+                pointRadius: 0
+            });
+            
+            functionChart.update();
+        }
+        
+        // Инициализация при загрузке страницы
+        window.onload = function() {
+            createChart();
+            updateParameterValue();
+            
+            // Инициализация MathJax
+            if (window.MathJax) {
+                MathJax.typesetPromise();
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Интерактивный построитель графиков | Параметры a,b,c,d | ЕГЭ Математика</title>
+    <!-- MathJax -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+    <!-- Plotly.js - мощный движок с масштабированием -->
+    <script src="https://cdn.plot.ly/plotly-3.1.0.min.js" charset="utf-8"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f0f4fa 0%, #e2e9f2 100%);
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            padding: 1.5rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 1.8rem;
+        }
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(120deg, #1a4c6e, #2c7a9e);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.02em;
+        }
+        .header p {
+            color: #2c5a74;
+            margin-top: 0.4rem;
+            font-size: 1rem;
+        }
+        .badge-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 0.8rem;
+        }
+        .badge {
+            background: #ffffffcc;
+            backdrop-filter: blur(4px);
+            padding: 0.25rem 0.9rem;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #1f5e7e;
+            border: 1px solid #cde0ed;
+        }
+
+        /* Основная сетка */
+        .dashboard {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 1.5rem;
+            background: transparent;
+        }
+
+        /* Левая панель */
+        .control-panel {
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(8px);
+            border-radius: 32px;
+            padding: 1.3rem 1.2rem;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+            border: 1px solid rgba(255,255,255,0.7);
+            height: fit-content;
+        }
+
+        .param-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.9rem;
+            margin-bottom: 1.8rem;
+        }
+        .param-card {
+            background: #f9fbfe;
+            border-radius: 24px;
+            padding: 0.7rem 0.5rem;
+            text-align: center;
+            box-shadow: inset 0 1px 2px #00000008, 0 2px 5px rgba(0,0,0,0.02);
+            border: 1px solid #e3edf5;
+        }
+        .param-card label {
+            font-weight: 700;
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+        .param-symbol {
+            font-family: 'Courier New', monospace;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #1f6d93;
+        }
+        .param-card input {
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 1rem;
+            text-align: center;
+            border: 1px solid #caddf0;
+            border-radius: 60px;
+            background: white;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .param-card input:focus {
+            outline: none;
+            border-color: #2a8bbf;
+            box-shadow: 0 0 0 2px rgba(42,139,191,0.2);
+        }
+
+        .func-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem;
+            margin: 1rem 0 1.2rem;
+            justify-content: center;
+        }
+        .func-btn {
+            background: #ecf3f9;
+            border: none;
+            padding: 0.45rem 0.9rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: monospace;
+            color: #1f4f6e;
+        }
+        .func-btn.active {
+            background: #1f6d93;
+            color: white;
+            box-shadow: 0 4px 10px rgba(31,109,147,0.3);
+        }
+        .formula-preview {
+            background: #1e2f3a;
+            color: #eef4db;
+            padding: 0.7rem;
+            border-radius: 24px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            text-align: center;
+            margin: 1rem 0;
+            word-break: break-word;
+            overflow-x: auto;
+        }
+        .info-block {
+            background: #e9f0f7;
+            border-radius: 24px;
+            padding: 0.8rem;
+            font-size: 0.8rem;
+            margin-top: 1rem;
+        }
+        .info-block p {
+            margin: 0.3rem 0;
+        }
+        hr {
+            margin: 1rem 0;
+            border: none;
+            height: 1px;
+            background: #cfe0ed;
+        }
+        .view-controls {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: 0.8rem;
+        }
+        .view-btn {
+            background: #e2ecf5;
+            border: none;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        /* График */
+        .graph-container {
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.15);
+            padding: 0.8rem;
+            border: 1px solid rgba(255,255,255,0.6);
+        }
+        #plotly-graph {
+            width: 100%;
+            height: 550px;
+            border-radius: 24px;
+        }
+        .legend-note {
+            text-align: center;
+            font-size: 0.7rem;
+            margin-top: 0.5rem;
+            color: #4c6f86;
+        }
+
+        @media (max-width: 800px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+            body {
+                padding: 1rem;
+            }
+            .param-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        button {
+            background: none;
+            border: none;
+        }
+        .reset-zoom {
+            background: #1f6d93;
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>📐 Графики функций в общем виде</h1>
+        <p>\( y = a \cdot f\big(b(x + c)\big) + d \) — масштабируй, двигай, исследуй</p>
+        <div class="badge-group">
+            <span class="badge">🎯 a – верт. растяжение</span>
+            <span class="badge">🌀 b – гор. сжатие / отражение</span>
+            <span class="badge">↔️ c – сдвиг по X</span>
+            <span class="badge">⬆️ d – сдвиг по Y</span>
+        </div>
+    </div>
+
+    <div class="dashboard">
+        <!-- Панель управления -->
+        <div class="control-panel">
+            <h3 style="font-size: 1.2rem; margin-bottom: 0.8rem;">⚙️ Параметры</h3>
+            <div class="param-grid">
+                <div class="param-card"><label><span class="param-symbol">a</span></label><input type="number" id="paramA" value="1" step="0.2"></div>
+                <div class="param-card"><label><span class="param-symbol">b</span></label><input type="number" id="paramB" value="1" step="0.2"></div>
+                <div class="param-card"><label><span class="param-symbol">c</span></label><input type="number" id="paramC" value="0" step="0.5"></div>
+                <div class="param-card"><label><span class="param-symbol">d</span></label><input type="number" id="paramD" value="0" step="0.5"></div>
+            </div>
+
+            <div class="func-buttons">
+                <button data-func="quad" class="func-btn active">x² парабола</button>
+                <button data-func="cubic" class="func-btn">x³ куб</button>
+                <button data-func="sqrt" class="func-btn">√x корень</button>
+                <button data-func="hyperbola" class="func-btn">1/x гипербола</button>
+                <button data-func="abs" class="func-btn">|x| модуль</button>
+                <button data-func="exp" class="func-btn">eˣ экспонента</button>
+                <button data-func="ln" class="func-btn">ln(x) логарифм</button>
+                <button data-func="sin" class="func-btn">sin(x)</button>
+                <button data-func="cos" class="func-btn">cos(x)</button>
+            </div>
+
+            <div class="formula-preview" id="formulaPreview">
+                \( y = 1 \cdot (1\cdot x)^2 + 0 \)
+            </div>
+
+            <div class="info-block" id="infoBlock">
+                <p>📌 <strong>Асимптоты / особенности</strong></p>
+                <p id="asymptoteText">— настройте параметры —</p>
+                <hr>
+                <p>🎯 <strong>Ключевые точки</strong></p>
+                <p id="keyPoints">пересечение с Oy, ориентиры</p>
+            </div>
+            <div class="view-controls">
+                <button id="resetViewBtn" class="view-btn reset-zoom">⟳ Сбросить масштаб</button>
+                <span style="font-size:0.7rem; align-self:center;">🔍 колесико мыши = zoom</span>
+            </div>
+        </div>
+
+        <!-- График -->
+        <div class="graph-container">
+            <div id="plotly-graph"></div>
+            <div class="legend-note">
+                * Интерактивный график: масштабируй (колесико), тяни мышью. Параметры обновляются мгновенно.
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // ---------- Глобальные переменные ----------
+    let currentFunc = 'quad';      // базовая функция
+    let plotlyGraph = null;
+    let currentLayout = {
+        title: { text: "График функции", font: { size: 14 } },
+        xaxis: { title: "x", zeroline: true, gridcolor: '#e2e8f0', range: [-5.5, 5.5] },
+        yaxis: { title: "y", zeroline: true, gridcolor: '#e2e8f0', range: [-5.5, 5.5] },
+        hovermode: 'closest',
+        margin: { l: 45, r: 30, t: 40, b: 40 },
+        plot_bgcolor: '#ffffff',
+        paper_bgcolor: '#ffffff',
+        showlegend: true,
+        legend: { orientation: 'h', yanchor: 'bottom', y: 1.02, xanchor: 'right', x: 1 }
+    };
+
+    // DOM элементы
+    const aInput = document.getElementById('paramA');
+    const bInput = document.getElementById('paramB');
+    const cInput = document.getElementById('paramC');
+    const dInput = document.getElementById('paramD');
+    const formulaDiv = document.getElementById('formulaPreview');
+    const asymptoteTextSpan = document.getElementById('asymptoteText');
+    const keyPointsSpan = document.getElementById('keyPoints');
+
+    // ---------- Базовая функция f(t) ----------
+    function baseFunction(t, type) {
+        switch(type) {
+            case 'quad': return t * t;
+            case 'cubic': return t * t * t;
+            case 'sqrt': return t >= 0 ? Math.sqrt(t) : NaN;
+            case 'hyperbola': return Math.abs(t) < 1e-9 ? NaN : 1 / t;
+            case 'abs': return Math.abs(t);
+            case 'exp': return Math.exp(t);
+            case 'ln': return t > 0 ? Math.log(t) : NaN;
+            case 'sin': return Math.sin(t);
+            case 'cos': return Math.cos(t);
+            default: return t * t;
+        }
+    }
+
+    // Проверка области определения с учетом внутреннего преобразования u = b*(x + c)
+    function isDefined(x, aVal, bVal, cVal, dVal, funcType) {
+        let inner = bVal * (x + cVal);
+        if (funcType === 'sqrt') return inner >= 0 && isFinite(inner);
+        if (funcType === 'ln') return inner > 0;
+        if (funcType === 'hyperbola') return Math.abs(inner) > 1e-9;
+        return true;
+    }
+
+    // Вычисление значения y
+    function evaluateY(x, aVal, bVal, cVal, dVal, funcType) {
+        if (!isDefined(x, aVal, bVal, cVal, dVal, funcType)) return NaN;
+        let inner = bVal * (x + cVal);
+        let base = baseFunction(inner, funcType);
+        if (isNaN(base) || !isFinite(base)) return NaN;
+        return aVal * base + dVal;
+    }
+
+    // Генерация точек для гладкого графика с учетом разрывов (разделение на непрерывные куски)
+    function generateTraces(aVal, bVal, cVal, dVal, funcType) {
+        const xMin = -7.5;
+        const xMax = 7.5;
+        const step = 0.065;
+        
+        let traces = [];
+        let currentX = [];
+        let currentY = [];
+        
+        for (let x = xMin; x <= xMax + step/2; x += step) {
+            let y = evaluateY(x, aVal, bVal, cVal, dVal, funcType);
+            let isValid = !isNaN(y) && isFinite(y);
+            
+            if (isValid) {
+                currentX.push(x);
+                currentY.push(y);
+            } else {
+                // закрыть текущий трек, если есть точки
+                if (currentX.length > 0) {
+                    traces.push({ x: [...currentX], y: [...currentY], mode: 'lines', type: 'scatter', line: { width: 2.5, color: '#2c7fb8' }, name: 'y(x)', connectgaps: false });
+                    currentX = [];
+                    currentY = [];
+                }
+                // пропуск разрыва
+            }
+        }
+        if (currentX.length > 0) {
+            traces.push({ x: [...currentX], y: [...currentY], mode: 'lines', type: 'scatter', line: { width: 2.5, color: '#2c7fb8' }, name: 'y(x)', connectgaps: false });
+        }
+        
+        // Добавляем маркеры для асимптот (вертикальные линии), если нужно
+        if (funcType === 'hyperbola' || funcType === 'ln') {
+            let vertAsympt = -cVal;
+            if (isFinite(vertAsympt) && Math.abs(vertAsympt) < 20) {
+                traces.push({
+                    x: [vertAsympt, vertAsympt],
+                    y: [-20, 20],
+                    mode: 'lines',
+                    type: 'scatter',
+                    line: { dash: 'dash', width: 1.5, color: 'red' },
+                    name: 'верт. асимптота',
+                    showlegend: true
+                });
+            }
+        }
+        if (funcType === 'exp' || funcType === 'hyperbola') {
+            let horizAsympt = dVal;
+            traces.push({
+                x: [-8, 8],
+                y: [horizAsympt, horizAsympt],
+                mode: 'lines',
+                type: 'scatter',
+                line: { dash: 'dot', width: 1.2, color: '#cc7b2c' },
+                name: 'гор. асимптота',
+                showlegend: true
+            });
+        }
+        
+        // Добавить специальную точку вершины для параболы/модуля
+        if (funcType === 'quad') {
+            let vertexX = -cVal;
+            let vertexY = dVal;
+            traces.push({
+                x: [vertexX], y: [vertexY], mode: 'markers', type: 'scatter',
+                marker: { color: '#d94f30', size: 8, symbol: 'circle' },
+                name: `вершина (${vertexX.toFixed(2)}; ${vertexY.toFixed(2)})`,
+                showlegend: true
+            });
+        }
+        if (funcType === 'abs') {
+            let vertexX = -cVal;
+            let vertexY = dVal;
+            traces.push({
+                x: [vertexX], y: [vertexY], mode: 'markers', type: 'scatter',
+                marker: { color: '#e68a2e', size: 7 },
+                name: `вершина (${vertexX.toFixed(2)}; ${vertexY.toFixed(2)})`,
+                showlegend: true
+            });
+        }
+        // Для корня - начальная точка
+        if (funcType === 'sqrt') {
+            let startX = -cVal;
+            let startY = dVal;
+            if (isFinite(startY) && isFinite(startX)) {
+                traces.push({
+                    x: [startX], y: [startY], mode: 'markers', type: 'scatter',
+                    marker: { color: '#2c9e6b', size: 7, symbol: 'circle-open' },
+                    name: `начало (${startX.toFixed(2)}; ${startY.toFixed(2)})`,
+                    showlegend: true
+                });
+            }
+        }
+        
+        return traces;
+    }
+
+    // Получить читаемую формулу
+    function buildLatex(aVal, bVal, cVal, dVal, funcType) {
+        let baseLatex = '';
+        switch(funcType) {
+            case 'quad': baseLatex = 'x^2'; break;
+            case 'cubic': baseLatex = 'x^3'; break;
+            case 'sqrt': baseLatex = '\\sqrt{x}'; break;
+            case 'hyperbola': baseLatex = '\\frac{1}{x}'; break;
+            case 'abs': baseLatex = '|x|'; break;
+            case 'exp': baseLatex = 'e^{x}'; break;
+            case 'ln': baseLatex = '\\ln(x)'; break;
+            case 'sin': baseLatex = '\\sin(x)'; break;
+            case 'cos': baseLatex = '\\cos(x)'; break;
+        }
+        let cValShow = cVal;
+        let sign = (cValShow >= 0) ? `+${cValShow}` : `${cValShow}`;
+        let inner = '';
+        if (bVal === 1 && cVal === 0) inner = 'x';
+        else if (bVal === 1) inner = `x ${sign}`;
+        else if (cVal === 0) inner = `${bVal}x`;
+        else inner = `${bVal}(x ${sign})`;
+        
+        let final = '';
+        if (funcType === 'quad') final = `${aVal} \\cdot (${inner})^2 + ${dVal}`;
+        else if (funcType === 'cubic') final = `${aVal} \\cdot (${inner})^3 + ${dVal}`;
+        else if (funcType === 'sqrt') final = `${aVal} \\sqrt{${inner}} + ${dVal}`;
+        else if (funcType === 'hyperbola') final = `${aVal} \\cdot \\frac{1}{${inner}} + ${dVal}`;
+        else if (funcType === 'abs') final = `${aVal} \\cdot |${inner}| + ${dVal}`;
+        else if (funcType === 'exp') final = `${aVal} \\cdot e^{${inner}} + ${dVal}`;
+        else if (funcType === 'ln') final = `${aVal} \\cdot \\ln(${inner}) + ${dVal}`;
+        else if (funcType === 'sin') final = `${aVal} \\cdot \\sin(${inner}) + ${dVal}`;
+        else if (funcType === 'cos') final = `${aVal} \\cdot \\cos(${inner}) + ${dVal}`;
+        
+        final = final.replace(/1\s*\*/g, '').replace(/\*1/g, '');
+        final = final.replace(/\+ 0$/, '').replace(/\- 0$/, '');
+        if (final.startsWith('1 \\cdot')) final = final.slice(7);
+        if (final === '') final = '0';
+        return `\\( y = ${final} \\)`;
+    }
+
+    // Обновление информации об асимптотах и ключевых моментах
+    function updateInfo(aVal, bVal, cVal, dVal, funcType) {
+        let asymptMsg = '';
+        let keyMsg = '';
+        // Пересечение с OY
+        let yIntercept = evaluateY(0, aVal, bVal, cVal, dVal, funcType);
+        let oyText = (isNaN(yIntercept) || !isFinite(yIntercept)) ? 'не определено' : yIntercept.toFixed(4);
+        keyMsg = `📌 Пересечение с OY (x=0): y ≈ ${oyText}<br>`;
+        
+        if (funcType === 'hyperbola') {
+            let vertAs = -cVal;
+            asymptMsg = `Вертикальная асимптота: x = ${vertAs.toFixed(3)}; горизонтальная: y = ${dVal.toFixed(3)}.`;
+            keyMsg += `Центр гиперболы (${vertAs.toFixed(2)}; ${dVal.toFixed(2)}).`;
+        } else if (funcType === 'quad') {
+            let vx = -cVal;
+            let vy = dVal;
+            asymptMsg = `Парабола: вершина (${vx.toFixed(3)}; ${vy.toFixed(3)}), ветви ${aVal > 0 ? 'вверх ↑' : 'вниз ↓'}.`;
+            keyMsg += `Вершина — ${aVal>0 ? 'минимум' : 'максимум'}.`;
+        } else if (funcType === 'abs') {
+            let vx = -cVal;
+            let vy = dVal;
+            asymptMsg = `Модуль: вершина (${vx.toFixed(3)}; ${vy.toFixed(3)}), угол раскрытия зависит от |a| = ${Math.abs(aVal)}.`;
+            keyMsg += `Ветви направлены ${aVal>0 ? 'вверх' : 'вниз'}.`;
+        } else if (funcType === 'sqrt') {
+            let start = -cVal;
+            let yStart = dVal;
+            asymptMsg = `Корень: область определения x ${bVal > 0 ? '≥' : '≤'} ${start.toFixed(3)}. Начало (${start.toFixed(2)}; ${yStart.toFixed(2)}).`;
+            keyMsg += `Функция определена только при x ${bVal>0 ? '≥' : '≤'} ${start.toFixed(2)}.`;
+        } else if (funcType === 'ln') {
+            let vertAs = -cVal;
+            asymptMsg = `Логарифм: вертикальная асимптота x = ${vertAs.toFixed(3)}. Область: x ${bVal > 0 ? '>' : '<'} ${vertAs.toFixed(3)}.`;
+            keyMsg += `Горизонтальной асимптоты нет, растёт медленно.`;
+        } else if (funcType === 'exp') {
+            asymptMsg = `Экспонента: горизонтальная асимптота y = ${dVal.toFixed(3)}. ${bVal < 0 ? 'Убывающая' : 'Возрастающая'}.`;
+            keyMsg += `При x → ±∞ стремится к асимптоте.`;
+        } else if (funcType === 'sin' || funcType === 'cos') {
+            let period = (2 * Math.PI / Math.abs(bVal)).toFixed(3);
+            let amp = Math.abs(aVal).toFixed(2);
+            asymptMsg = `Период T = ${period}, амплитуда = ${amp}. Сдвиг по фазе: ${(-cVal).toFixed(3)}.`;
+            keyMsg += `Колебания от ${(dVal - Math.abs(aVal)).toFixed(2)} до ${(dVal + Math.abs(aVal)).toFixed(2)}.`;
+        } else {
+            asymptMsg = `Преобразованная функция. Вертикальный сдвиг d = ${dVal.toFixed(2)}.`;
+            keyMsg += `Следите за характерными точками на графике.`;
+        }
+        
+        asymptoteTextSpan.innerHTML = asymptMsg;
+        keyPointsSpan.innerHTML = keyMsg;
+    }
+
+    // Обновление графика через Plotly
+    function updateGraph() {
+        const aVal = parseFloat(aInput.value);
+        const bVal = parseFloat(bInput.value);
+        const cVal = parseFloat(cInput.value);
+        const dVal = parseFloat(dInput.value);
+        
+        // Сохраняем текущий диапазон осей, если есть, чтобы не сбрасывать при каждом изменении (кроме кнопки сброса)
+        let currentLayout = { ...plotlyGraph?.layout };
+        let xRange = currentLayout?.xaxis?.range;
+        let yRange = currentLayout?.yaxis?.range;
+        
+        const traces = generateTraces(aVal, bVal, cVal, dVal, currentFunc);
+        
+        const newLayout = {
+            title: { text: `График: ${currentFunc}  |  a=${aVal}, b=${bVal}, c=${cVal}, d=${dVal}`, font: { size: 13 } },
+            xaxis: { title: "x", zeroline: true, gridcolor: '#e8ecf2', range: xRange || [-5.5, 5.5] },
+            yaxis: { title: "y", zeroline: true, gridcolor: '#e8ecf2', range: yRange || [-5.5, 5.5] },
+            hovermode: 'closest',
+            margin: { l: 45, r: 30, t: 50, b: 40 },
+            plot_bgcolor: '#ffffff',
+            paper_bgcolor: '#ffffff',
+            legend: { orientation: 'h', y: -0.15, x: 0.5, xanchor: 'center' },
+            dragmode: 'zoom',
+        };
+        
+        const config = { responsive: true, scrollZoom: true, displayModeBar: true, modeBarButtonsToRemove: ['lasso2d', 'select2d'] };
+        
+        if (plotlyGraph) {
+            Plotly.react('plotly-graph', traces, newLayout, config);
+        } else {
+            plotlyGraph = Plotly.newPlot('plotly-graph', traces, newLayout, config);
+        }
+        
+        // обновить формулу и текстовую информацию
+        const latexFormula = buildLatex(aVal, bVal, cVal, dVal, currentFunc);
+        formulaDiv.innerHTML = latexFormula;
+        MathJax.typesetPromise([formulaDiv]).catch(err => console.log(err));
+        
+        updateInfo(aVal, bVal, cVal, dVal, currentFunc);
+    }
+    
+    // Сброс масштаба
+    function resetZoom() {
+        if (plotlyGraph) {
+            Plotly.relayout('plotly-graph', {
+                'xaxis.range': [-5.5, 5.5],
+                'yaxis.range': [-5.5, 5.5]
+            });
+        } else {
+            updateGraph();
+        }
+    }
+    
+    // Обработчики
+    function refresh() {
+        updateGraph();
+    }
+    
+    function setFunction(func) {
+        currentFunc = func;
+        document.querySelectorAll('.func-btn').forEach(btn => {
+            if (btn.getAttribute('data-func') === func) btn.classList.add('active');
+            else btn.classList.remove('active');
+        });
+        refresh();
+    }
+    
+    // Слушатели
+    aInput.addEventListener('input', refresh);
+    bInput.addEventListener('input', refresh);
+    cInput.addEventListener('input', refresh);
+    dInput.addEventListener('input', refresh);
+    document.querySelectorAll('.func-btn').forEach(btn => {
+        btn.addEventListener('click', () => setFunction(btn.getAttribute('data-func')));
+    });
+    document.getElementById('resetViewBtn').addEventListener('click', resetZoom);
+    
+    // Запуск
+    setFunction('quad');
+</script>
+</body>
+</html>

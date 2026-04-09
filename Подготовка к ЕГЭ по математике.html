@@ -1,0 +1,3445 @@
+<!DOCTYPE html>
+<!-- saved from url=(0197)file:///C:/Users/smidr/Downloads/%D0%9E%D0%A6%D0%95%D0%9D%D0%9A%D0%90%20%D0%97%D0%9D%D0%90%D0%9D%D0%98%D0%99%20%D0%95%D0%93%D0%AD%20%D0%9C%D0%90%D0%A2%D0%95%D0%9C%D0%90%D0%A2%D0%98%D0%9A%D0%90.html -->
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подготовка к ЕГЭ по математике</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #34495e;
+            --success-color: #27ae60;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 25px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .themes-container {
+            flex: 3;
+            min-width: 300px;
+        }
+
+        .control-panel {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+        }
+
+        .section {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .section-title {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .theme-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.3s;
+        }
+
+        .theme-item:hover {
+            background-color: #f9f9f9;
+        }
+
+        .theme-checkbox {
+            margin-right: 15px;
+            transform: scale(1.3);
+            cursor: pointer;
+        }
+
+        .theme-text {
+            flex-grow: 1;
+        }
+
+        .theme-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+
+        .theme-description {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .slider-container {
+            display: flex;
+            align-items: center;
+            margin-left: 15px;
+            min-width: 200px;
+        }
+
+        .slider-label {
+            font-size: 0.85rem;
+            color: var(--dark-color);
+            min-width: 100px;
+            text-align: right;
+            margin-right: 15px;
+        }
+
+        .slider {
+            flex-grow: 1;
+            height: 10px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .slider-value {
+            min-width: 30px;
+            text-align: center;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-left: 10px;
+        }
+
+        .slider-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        .progress-summary {
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .progress-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar-container {
+            height: 20px;
+            background-color: #eee;
+            border-radius: 10px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--success-color));
+            border-radius: 10px;
+            width: 0%;
+            transition: width 1s ease;
+        }
+
+        .result-btn {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background-color: var(--success-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .result-btn:hover {
+            background-color: #219653;
+        }
+
+        .result-container {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f0f8ff;
+            border-radius: var(--border-radius);
+            display: none;
+        }
+
+        .result-container.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .result-title {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stat-box {
+            background-color: white;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .save-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 10px;
+            border-radius: var(--border-radius);
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+        }
+
+        .save-message.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .control-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .control-btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .save-btn {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .save-btn:hover {
+            background-color: #2980b9;
+        }
+
+        .reset-btn {
+            background-color: #f8f9fa;
+            color: var(--dark-color);
+            border: 1px solid #ddd;
+        }
+
+        .reset-btn:hover {
+            background-color: #e9ecef;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 1100px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .control-panel {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .theme-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .slider-container {
+                margin-left: 0;
+                margin-top: 15px;
+                width: 100%;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Подготовка к ЕГЭ по математике</h1>
+        <p class="subtitle">Оцените свои знания по всем темам экзамена и отслеживайте прогресс</p>
+    </header>
+
+    <div class="container">
+        <div class="themes-container">
+            <!-- Планиметрия -->
+            <div class="section">
+                <h2 class="section-title">Планиметрия</h2>
+                <div id="planimetry-list"><div class="theme-item" id="topic-1">
+                <input type="checkbox" class="theme-checkbox" id="check-1">
+                <div class="theme-text">
+                    <div class="theme-title">Решение прямоугольного треугольника <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Теорема Пифагора, тригонометрические соотношения, свойства медиан, высот, радиусы вписанной и описанной окружностей</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-1">
+                    <div class="slider-value" id="value-1">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-2">
+                <input type="checkbox" class="theme-checkbox" id="check-2">
+                <div class="theme-text">
+                    <div class="theme-title">Решение равнобедренного треугольника <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Свойства равнобедренных треугольников, формулы высоты, площади, углов, радиусы окружностей</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-2">
+                    <div class="slider-value" id="value-2">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-3">
+                <input type="checkbox" class="theme-checkbox" id="check-3">
+                <div class="theme-text">
+                    <div class="theme-title">Треугольники общего вида <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Теоремы синусов и косинусов, формулы площади, свойства медиан, биссектрис, высот</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-3">
+                    <div class="slider-value" id="value-3">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-4">
+                <input type="checkbox" class="theme-checkbox" id="check-4">
+                <div class="theme-text">
+                    <div class="theme-title">Параллелограммы <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Свойства параллелограмма, ромба, прямоугольника, квадрата, формулы площадей и диагоналей</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-4">
+                    <div class="slider-value" id="value-4">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-5">
+                <input type="checkbox" class="theme-checkbox" id="check-5">
+                <div class="theme-text">
+                    <div class="theme-title">Трапеция <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Свойства трапеций, средняя линия, формулы площади, вписанные и описанные окружности</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-5">
+                    <div class="slider-value" id="value-5">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-6">
+                <input type="checkbox" class="theme-checkbox" id="check-6">
+                <div class="theme-text">
+                    <div class="theme-title">Центральные и вписанные углы <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Свойства углов в окружности, теоремы о вписанных углах, решение задач на окружности</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="7" class="slider" id="slider-6">
+                    <div class="slider-value" id="value-6">7</div>
+                </div>
+            </div><div class="theme-item" id="topic-7">
+                <input type="checkbox" class="theme-checkbox" id="check-7">
+                <div class="theme-text">
+                    <div class="theme-title">Касательная, хорда, секущая <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Свойства касательных, теоремы о хордах и секущих, задачи на окружности с касательными</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-7">
+                    <div class="slider-value" id="value-7">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-8">
+                <input type="checkbox" class="theme-checkbox" id="check-8">
+                <div class="theme-text">
+                    <div class="theme-title">Вписанные окружности <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Радиус вписанной окружности, свойства касания, задачи на вписанные окружности в треугольники и многоугольники</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-8">
+                    <div class="slider-value" id="value-8">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-9">
+                <input type="checkbox" class="theme-checkbox" id="check-9">
+                <div class="theme-text">
+                    <div class="theme-title">Описанные окружности <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Радиус описанной окружности, свойства описанных фигур, задачи на описанные окружности</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-9">
+                    <div class="slider-value" id="value-9">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-119">
+                <input type="checkbox" class="theme-checkbox" id="check-119">
+                <div class="theme-text">
+                    <div class="theme-title">Треугольники и их свойства <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Сложные задачи на свойства треугольников, теоремы, соотношения</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-119">
+                    <div class="slider-value" id="value-119">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-120">
+                <input type="checkbox" class="theme-checkbox" id="check-120">
+                <div class="theme-text">
+                    <div class="theme-title">Четырехугольники и их свойства <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Сложные задачи на свойства четырехугольников, диагонали, углы</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-120">
+                    <div class="slider-value" id="value-120">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-121">
+                <input type="checkbox" class="theme-checkbox" id="check-121">
+                <div class="theme-text">
+                    <div class="theme-title">Окружности и системы окружностей <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Задачи на системы окружностей, взаимное расположение, касание</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-121">
+                    <div class="slider-value" id="value-121">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-122">
+                <input type="checkbox" class="theme-checkbox" id="check-122">
+                <div class="theme-text">
+                    <div class="theme-title">Вписанные окружности и треугольники <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Задачи на вписанные окружности в треугольники, радиус, точки касания</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-122">
+                    <div class="slider-value" id="value-122">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-123">
+                <input type="checkbox" class="theme-checkbox" id="check-123">
+                <div class="theme-text">
+                    <div class="theme-title">Описанные окружности и треугольники <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Задачи на описанные окружности около треугольников, радиус, свойства</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-123">
+                    <div class="slider-value" id="value-123">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-124">
+                <input type="checkbox" class="theme-checkbox" id="check-124">
+                <div class="theme-text">
+                    <div class="theme-title">Окружности и треугольники, разные задачи <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Разнообразные сложные задачи на окружности и треугольники</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-124">
+                    <div class="slider-value" id="value-124">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-125">
+                <input type="checkbox" class="theme-checkbox" id="check-125">
+                <div class="theme-text">
+                    <div class="theme-title">Вписанные окружности и четырехугольники <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Задачи на вписанные окружности в четырехугольники, условия вписанности</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-125">
+                    <div class="slider-value" id="value-125">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-126">
+                <input type="checkbox" class="theme-checkbox" id="check-126">
+                <div class="theme-text">
+                    <div class="theme-title">Описанные окружности и четырехугольники <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Задачи на описанные окружности около четырехугольников, условия описанности</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-126">
+                    <div class="slider-value" id="value-126">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-127">
+                <input type="checkbox" class="theme-checkbox" id="check-127">
+                <div class="theme-text">
+                    <div class="theme-title">Окружности и четырехугольники, разные задачи <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Разнообразные сложные задачи на окружности и четырехугольники</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="10" class="slider" id="slider-127">
+                    <div class="slider-value" id="value-127">10</div>
+                </div>
+            </div><div class="theme-item" id="topic-128">
+                <input type="checkbox" class="theme-checkbox" id="check-128">
+                <div class="theme-text">
+                    <div class="theme-title">Разные задачи о многоугольниках <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Задачи на различные многоугольники, их свойства и соотношения</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-128">
+                    <div class="slider-value" id="value-128">0</div>
+                </div>
+            </div></div>
+            </div>
+
+            <!-- Алгебра и математический анализ -->
+            <div class="section">
+                <h2 class="section-title">Алгебра и математический анализ</h2>
+                <div id="algebra-list"><div class="theme-item" id="topic-10">
+                <input type="checkbox" class="theme-checkbox" id="check-10">
+                <div class="theme-text">
+                    <div class="theme-title">Векторы и операции с ними <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Координаты векторов, сложение, вычитание, умножение на число, скалярное произведение, длина вектора</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-10">
+                    <div class="slider-value" id="value-10">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-25">
+                <input type="checkbox" class="theme-checkbox" id="check-25">
+                <div class="theme-text">
+                    <div class="theme-title">Линейные, квадратные, кубические уравнения <span style="color: #e74c3c; font-size: 0.9rem;">(низкая)</span></div>
+                    <div class="theme-description">Решение уравнений первой, второй и третьей степени, теорема Виета, дискриминант</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-25">
+                    <div class="slider-value" id="value-25">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-26">
+                <input type="checkbox" class="theme-checkbox" id="check-26">
+                <div class="theme-text">
+                    <div class="theme-title">Рациональные уравнения <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Решение уравнений с дробями, приведение к общему знаменателю, проверка корней</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-26">
+                    <div class="slider-value" id="value-26">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-27">
+                <input type="checkbox" class="theme-checkbox" id="check-27">
+                <div class="theme-text">
+                    <div class="theme-title">Иррациональные уравнения <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Решение уравнений с корнями, возведение в степень, проверка корней, ОДЗ</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-27">
+                    <div class="slider-value" id="value-27">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-28">
+                <input type="checkbox" class="theme-checkbox" id="check-28">
+                <div class="theme-text">
+                    <div class="theme-title">Показательные уравнения <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Решение уравнений с показательными функциями, приведение к одному основанию</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-28">
+                    <div class="slider-value" id="value-28">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-29">
+                <input type="checkbox" class="theme-checkbox" id="check-29">
+                <div class="theme-text">
+                    <div class="theme-title">Логарифмические уравнения <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Решение уравнений с логарифмами, свойства логарифмов, ОДЗ логарифмических уравнений</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-29">
+                    <div class="slider-value" id="value-29">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-30">
+                <input type="checkbox" class="theme-checkbox" id="check-30">
+                <div class="theme-text">
+                    <div class="theme-title">Тригонометрические уравнения <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Решение простейших тригонометрических уравнений, формулы приведения, отбор корней</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-30">
+                    <div class="slider-value" id="value-30">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-31">
+                <input type="checkbox" class="theme-checkbox" id="check-31">
+                <div class="theme-text">
+                    <div class="theme-title">Преобразования числовых рациональных выражений <span style="color: #e74c3c; font-size: 0.9rem;">(низкая)</span></div>
+                    <div class="theme-description">Упрощение числовых дробей, действия с рациональными числами</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-31">
+                    <div class="slider-value" id="value-31">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-32">
+                <input type="checkbox" class="theme-checkbox" id="check-32">
+                <div class="theme-text">
+                    <div class="theme-title">Преобразования алгебраических выражений и дробей <span style="color: #e74c3c; font-size: 0.9rem;">(низкая)</span></div>
+                    <div class="theme-description">Упрощение алгебраических выражений, действия с алгебраическими дробями</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-32">
+                    <div class="slider-value" id="value-32">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-33">
+                <input type="checkbox" class="theme-checkbox" id="check-33">
+                <div class="theme-text">
+                    <div class="theme-title">Вычисление значений степенных выражений <span style="color: #e74c3c; font-size: 0.9rem;">(низкая)</span></div>
+                    <div class="theme-description">Вычисление значений выражений со степенями, свойства степеней</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-33">
+                    <div class="slider-value" id="value-33">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-34">
+                <input type="checkbox" class="theme-checkbox" id="check-34">
+                <div class="theme-text">
+                    <div class="theme-title">Действия со степенями <span style="color: #e74c3c; font-size: 0.9rem;">(низкая)</span></div>
+                    <div class="theme-description">Умножение, деление, возведение в степень степеней, свойства степеней</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-34">
+                    <div class="slider-value" id="value-34">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-35">
+                <input type="checkbox" class="theme-checkbox" id="check-35">
+                <div class="theme-text">
+                    <div class="theme-title">Преобразования числовых иррациональных выражений <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Упрощение выражений с корнями, вынесение множителей из-под корня</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-35">
+                    <div class="slider-value" id="value-35">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-36">
+                <input type="checkbox" class="theme-checkbox" id="check-36">
+                <div class="theme-text">
+                    <div class="theme-title">Преобразования буквенных иррациональных выражений <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Упрощение алгебраических выражений с корнями, рационализация</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-36">
+                    <div class="slider-value" id="value-36">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-37">
+                <input type="checkbox" class="theme-checkbox" id="check-37">
+                <div class="theme-text">
+                    <div class="theme-title">Преобразования числовых логарифмических выражений <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Вычисление значений логарифмических выражений, свойства логарифмов</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-37">
+                    <div class="slider-value" id="value-37">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-38">
+                <input type="checkbox" class="theme-checkbox" id="check-38">
+                <div class="theme-text">
+                    <div class="theme-title">Преобразования буквенных логарифмических выражений <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Упрощение алгебраических выражений с логарифмами, свойства логарифмов</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-38">
+                    <div class="slider-value" id="value-38">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-39">
+                <input type="checkbox" class="theme-checkbox" id="check-39">
+                <div class="theme-text">
+                    <div class="theme-title">Вычисление значений тригонометрических выражений <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Вычисление значений тригонометрических выражений, основные тригонометрические формулы</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-39">
+                    <div class="slider-value" id="value-39">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-40">
+                <input type="checkbox" class="theme-checkbox" id="check-40">
+                <div class="theme-text">
+                    <div class="theme-title">Преобразования числовых тригонометрических выражений <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Упрощение числовых тригонометрических выражений, формулы приведения</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-40">
+                    <div class="slider-value" id="value-40">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-41">
+                <input type="checkbox" class="theme-checkbox" id="check-41">
+                <div class="theme-text">
+                    <div class="theme-title">Преобразования буквенных тригонометрических выражений <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Упрощение алгебраических выражений с тригонометрическими функциями</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-41">
+                    <div class="slider-value" id="value-41">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-42">
+                <input type="checkbox" class="theme-checkbox" id="check-42">
+                <div class="theme-text">
+                    <div class="theme-title">Физический смысл производной <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Производная как скорость изменения, задачи на движение, скорость, ускорение</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-42">
+                    <div class="slider-value" id="value-42">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-43">
+                <input type="checkbox" class="theme-checkbox" id="check-43">
+                <div class="theme-text">
+                    <div class="theme-title">Геометрический смысл производной, касательная <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Производная как угловой коэффициент касательной, уравнение касательной</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-43">
+                    <div class="slider-value" id="value-43">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-44">
+                <input type="checkbox" class="theme-checkbox" id="check-44">
+                <div class="theme-text">
+                    <div class="theme-title">Применение производной к исследованию функций <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Нахождение промежутков монотонности, экстремумов, наибольших и наименьших значений</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-44">
+                    <div class="slider-value" id="value-44">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-45">
+                <input type="checkbox" class="theme-checkbox" id="check-45">
+                <div class="theme-text">
+                    <div class="theme-title">Первообразная <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Нахождение первообразных, простейшие интегралы, формула Ньютона-Лейбница</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-45">
+                    <div class="slider-value" id="value-45">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-46">
+                <input type="checkbox" class="theme-checkbox" id="check-46">
+                <div class="theme-text">
+                    <div class="theme-title">Линейные уравнения и неравенства <span style="color: #e74c3c; font-size: 0.9rem;">(низкая)</span></div>
+                    <div class="theme-description">Прикладные задачи, решаемые с помощью линейных уравнений и неравенств</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-46">
+                    <div class="slider-value" id="value-46">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-47">
+                <input type="checkbox" class="theme-checkbox" id="check-47">
+                <div class="theme-text">
+                    <div class="theme-title">Квадратные и степенные уравнения и неравенства <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Прикладные задачи, решаемые с помощью квадратных и степенных уравнений</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-47">
+                    <div class="slider-value" id="value-47">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-48">
+                <input type="checkbox" class="theme-checkbox" id="check-48">
+                <div class="theme-text">
+                    <div class="theme-title">Рациональные уравнения и неравенства <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Прикладные задачи, решаемые с помощью рациональных уравнений</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-48">
+                    <div class="slider-value" id="value-48">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-49">
+                <input type="checkbox" class="theme-checkbox" id="check-49">
+                <div class="theme-text">
+                    <div class="theme-title">Иррациональные уравнения и неравенства <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Прикладные задачи, решаемые с помощью иррациональных уравнений</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-49">
+                    <div class="slider-value" id="value-49">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-50">
+                <input type="checkbox" class="theme-checkbox" id="check-50">
+                <div class="theme-text">
+                    <div class="theme-title">Показательные уравнения и неравенства <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Прикладные задачи, решаемые с помощью показательных уравнений</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-50">
+                    <div class="slider-value" id="value-50">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-51">
+                <input type="checkbox" class="theme-checkbox" id="check-51">
+                <div class="theme-text">
+                    <div class="theme-title">Логарифмические уравнения и неравенства <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Прикладные задачи, решаемые с помощью логарифмических уравнений</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-51">
+                    <div class="slider-value" id="value-51">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-52">
+                <input type="checkbox" class="theme-checkbox" id="check-52">
+                <div class="theme-text">
+                    <div class="theme-title">Тригонометрические уравнения и неравенства <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Прикладные задачи, решаемые с помощью тригонометрических уравнений</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-52">
+                    <div class="slider-value" id="value-52">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-53">
+                <input type="checkbox" class="theme-checkbox" id="check-53">
+                <div class="theme-text">
+                    <div class="theme-title">Разные задачи <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Разнообразные прикладные задачи смешанного типа</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-53">
+                    <div class="slider-value" id="value-53">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-54">
+                <input type="checkbox" class="theme-checkbox" id="check-54">
+                <div class="theme-text">
+                    <div class="theme-title">Задачи на проценты, сплавы и смеси <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Решение текстовых задач на проценты, концентрацию, сплавы и смеси</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-54">
+                    <div class="slider-value" id="value-54">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-55">
+                <input type="checkbox" class="theme-checkbox" id="check-55">
+                <div class="theme-text">
+                    <div class="theme-title">Задачи на движение по прямой <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Задачи на движение по прямой: навстречу, вдогонку, с отставанием</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-55">
+                    <div class="slider-value" id="value-55">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-56">
+                <input type="checkbox" class="theme-checkbox" id="check-56">
+                <div class="theme-text">
+                    <div class="theme-title">Задачи на движение по окружности <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Задачи на движение по круговой трассе, замыкание круга</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-56">
+                    <div class="slider-value" id="value-56">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-57">
+                <input type="checkbox" class="theme-checkbox" id="check-57">
+                <div class="theme-text">
+                    <div class="theme-title">Задачи на движение по воде <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Задачи на движение по реке: скорость течения, собственная скорость</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-57">
+                    <div class="slider-value" id="value-57">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-58">
+                <input type="checkbox" class="theme-checkbox" id="check-58">
+                <div class="theme-text">
+                    <div class="theme-title">Задачи на совместную работу <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Задачи на производительность, совместную работу, заполнение бассейнов</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-58">
+                    <div class="slider-value" id="value-58">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-59">
+                <input type="checkbox" class="theme-checkbox" id="check-59">
+                <div class="theme-text">
+                    <div class="theme-title">Задачи на прогрессии <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Задачи на арифметические и геометрические прогрессии</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-59">
+                    <div class="slider-value" id="value-59">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-60">
+                <input type="checkbox" class="theme-checkbox" id="check-60">
+                <div class="theme-text">
+                    <div class="theme-title">Линейные функции <span style="color: #e74c3c; font-size: 0.9rem;">(низкая)</span></div>
+                    <div class="theme-description">Графики линейных функций, угловой коэффициент, точки пересечения с осями</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-60">
+                    <div class="slider-value" id="value-60">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-61">
+                <input type="checkbox" class="theme-checkbox" id="check-61">
+                <div class="theme-text">
+                    <div class="theme-title">Параболы <span style="color: #e74c3c; font-size: 0.9rem;">(низкая)</span></div>
+                    <div class="theme-description">Графики квадратичных функций, вершина параболы, ось симметрии</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-61">
+                    <div class="slider-value" id="value-61">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-62">
+                <input type="checkbox" class="theme-checkbox" id="check-62">
+                <div class="theme-text">
+                    <div class="theme-title">Гиперболы <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Графики обратной пропорциональности, асимптоты, свойства</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-62">
+                    <div class="slider-value" id="value-62">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-63">
+                <input type="checkbox" class="theme-checkbox" id="check-63">
+                <div class="theme-text">
+                    <div class="theme-title">Корни <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Графики функций с корнями, область определения, свойства</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-63">
+                    <div class="slider-value" id="value-63">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-64">
+                <input type="checkbox" class="theme-checkbox" id="check-64">
+                <div class="theme-text">
+                    <div class="theme-title">Показательные и логарифмические функции <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Графики показательных и логарифмических функций, свойства, асимптоты</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-64">
+                    <div class="slider-value" id="value-64">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-65">
+                <input type="checkbox" class="theme-checkbox" id="check-65">
+                <div class="theme-text">
+                    <div class="theme-title">Тригонометрические функции <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Графики синуса, косинуса, тангенса, период, амплитуда, сдвиги</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-65">
+                    <div class="slider-value" id="value-65">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-66">
+                <input type="checkbox" class="theme-checkbox" id="check-66">
+                <div class="theme-text">
+                    <div class="theme-title">Комбинированные задачи <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Задачи на комбинации графиков функций, пересечения, общие точки</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-66">
+                    <div class="slider-value" id="value-66">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-67">
+                <input type="checkbox" class="theme-checkbox" id="check-67">
+                <div class="theme-text">
+                    <div class="theme-title">Исследование функций без помощи производной <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Нахождение экстремумов элементарными методами, свойства функций</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-67">
+                    <div class="slider-value" id="value-67">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-68">
+                <input type="checkbox" class="theme-checkbox" id="check-68">
+                <div class="theme-text">
+                    <div class="theme-title">Исследование степенных и иррациональных функций <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Нахождение наибольших и наименьших значений степенных и иррациональных функций</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-68">
+                    <div class="slider-value" id="value-68">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-69">
+                <input type="checkbox" class="theme-checkbox" id="check-69">
+                <div class="theme-text">
+                    <div class="theme-title">Исследование частных <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Нахождение экстремумов функций, представленных в виде частного</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-69">
+                    <div class="slider-value" id="value-69">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-70">
+                <input type="checkbox" class="theme-checkbox" id="check-70">
+                <div class="theme-text">
+                    <div class="theme-title">Исследование произведений <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Нахождение экстремумов функций, представленных в виде произведения</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-70">
+                    <div class="slider-value" id="value-70">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-71">
+                <input type="checkbox" class="theme-checkbox" id="check-71">
+                <div class="theme-text">
+                    <div class="theme-title">Исследование показательных и логарифмических функций <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Нахождение наибольших и наименьших значений показательных и логарифмических функций</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-71">
+                    <div class="slider-value" id="value-71">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-72">
+                <input type="checkbox" class="theme-checkbox" id="check-72">
+                <div class="theme-text">
+                    <div class="theme-title">Исследование тригонометрических функций <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Нахождение наибольших и наименьших значений тригонометрических функций</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-72">
+                    <div class="slider-value" id="value-72">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-73">
+                <input type="checkbox" class="theme-checkbox" id="check-73">
+                <div class="theme-text">
+                    <div class="theme-title">Показательные уравнения <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Сложные показательные уравнения, требующие развернутого решения</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-73">
+                    <div class="slider-value" id="value-73">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-74">
+                <input type="checkbox" class="theme-checkbox" id="check-74">
+                <div class="theme-text">
+                    <div class="theme-title">Рациональные уравнения <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Сложные рациональные уравнения, требующие развернутого решения</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-74">
+                    <div class="slider-value" id="value-74">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-75">
+                <input type="checkbox" class="theme-checkbox" id="check-75">
+                <div class="theme-text">
+                    <div class="theme-title">Иррациональные уравнения <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Сложные иррациональные уравнения, требующие развернутого решения</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-75">
+                    <div class="slider-value" id="value-75">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-76">
+                <input type="checkbox" class="theme-checkbox" id="check-76">
+                <div class="theme-text">
+                    <div class="theme-title">Логарифмические уравнения <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Сложные логарифмические уравнения, требующие развернутого решения</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-76">
+                    <div class="slider-value" id="value-76">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-77">
+                <input type="checkbox" class="theme-checkbox" id="check-77">
+                <div class="theme-text">
+                    <div class="theme-title">Тригонометрические уравнения, сводимые к квадратным <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Тригонометрические уравнения, решаемые с помощью замены переменной</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-77">
+                    <div class="slider-value" id="value-77">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-78">
+                <input type="checkbox" class="theme-checkbox" id="check-78">
+                <div class="theme-text">
+                    <div class="theme-title">Тригонометрические уравнения, сводимые к однородным <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Однородные тригонометрические уравнения первой и второй степени</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-78">
+                    <div class="slider-value" id="value-78">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-79">
+                <input type="checkbox" class="theme-checkbox" id="check-79">
+                <div class="theme-text">
+                    <div class="theme-title">Тригонометрические уравнения, разложение на множители <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Тригонометрические уравнения, решаемые методом разложения на множители</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-79">
+                    <div class="slider-value" id="value-79">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-80">
+                <input type="checkbox" class="theme-checkbox" id="check-80">
+                <div class="theme-text">
+                    <div class="theme-title">Тригонометрические уравнения, исследование ОДЗ <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Тригонометрические уравнения с ограничениями области определения</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-80">
+                    <div class="slider-value" id="value-80">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-81">
+                <input type="checkbox" class="theme-checkbox" id="check-81">
+                <div class="theme-text">
+                    <div class="theme-title">Тригонометрические уравнения, разные задачи <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Разнообразные сложные тригонометрические уравнения</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-81">
+                    <div class="slider-value" id="value-81">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-82">
+                <input type="checkbox" class="theme-checkbox" id="check-82">
+                <div class="theme-text">
+                    <div class="theme-title">Тригонометрия и иррациональности <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Уравнения, содержащие тригонометрические и иррациональные выражения</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-82">
+                    <div class="slider-value" id="value-82">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-83">
+                <input type="checkbox" class="theme-checkbox" id="check-83">
+                <div class="theme-text">
+                    <div class="theme-title">Тригонометрия и логарифмы <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Уравнения, содержащие тригонометрические и логарифмические выражения</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-83">
+                    <div class="slider-value" id="value-83">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-84">
+                <input type="checkbox" class="theme-checkbox" id="check-84">
+                <div class="theme-text">
+                    <div class="theme-title">Тригонометрия и показательные выражения <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Уравнения, содержащие тригонометрические и показательные выражения</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-84">
+                    <div class="slider-value" id="value-84">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-85">
+                <input type="checkbox" class="theme-checkbox" id="check-85">
+                <div class="theme-text">
+                    <div class="theme-title">Другие уравнения смешанного типа <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Уравнения, содержащие комбинации различных типов функций</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-85">
+                    <div class="slider-value" id="value-85">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-100">
+                <input type="checkbox" class="theme-checkbox" id="check-100">
+                <div class="theme-text">
+                    <div class="theme-title">Неравенства, содержащие радикалы <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Решение иррациональных неравенств, метод интервалов для радикалов</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-100">
+                    <div class="slider-value" id="value-100">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-101">
+                <input type="checkbox" class="theme-checkbox" id="check-101">
+                <div class="theme-text">
+                    <div class="theme-title">Рациональные неравенства <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Решение рациональных неравенств, метод интервалов</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-101">
+                    <div class="slider-value" id="value-101">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-102">
+                <input type="checkbox" class="theme-checkbox" id="check-102">
+                <div class="theme-text">
+                    <div class="theme-title">Показательные неравенства <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Решение показательных неравенств, свойства показательных функций</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-102">
+                    <div class="slider-value" id="value-102">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-103">
+                <input type="checkbox" class="theme-checkbox" id="check-103">
+                <div class="theme-text">
+                    <div class="theme-title">Неравенства рациональные относительно показательной функции <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Неравенства, содержащие выражения вида f(e^x)</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-103">
+                    <div class="slider-value" id="value-103">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-104">
+                <input type="checkbox" class="theme-checkbox" id="check-104">
+                <div class="theme-text">
+                    <div class="theme-title">Логарифмические неравенства первой и второй степени <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Простые и сложные логарифмические неравенства</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-104">
+                    <div class="slider-value" id="value-104">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-105">
+                <input type="checkbox" class="theme-checkbox" id="check-105">
+                <div class="theme-text">
+                    <div class="theme-title">Неравенства рациональные относительно логарифмической функции <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Неравенства, содержащие выражения вида f(ln x)</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-105">
+                    <div class="slider-value" id="value-105">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-106">
+                <input type="checkbox" class="theme-checkbox" id="check-106">
+                <div class="theme-text">
+                    <div class="theme-title">Неравенства с логарифмами по переменному основанию <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Логарифмические неравенства с основанием, зависящим от переменной</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-106">
+                    <div class="slider-value" id="value-106">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-107">
+                <input type="checkbox" class="theme-checkbox" id="check-107">
+                <div class="theme-text">
+                    <div class="theme-title">Неравенства с логарифмами по переменному основанию, применение рационализации <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Метод рационализации для логарифмических неравенств</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-107">
+                    <div class="slider-value" id="value-107">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-108">
+                <input type="checkbox" class="theme-checkbox" id="check-108">
+                <div class="theme-text">
+                    <div class="theme-title">Логарифмические неравенства, разные задачи <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Разнообразные сложные логарифмические неравенства</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-108">
+                    <div class="slider-value" id="value-108">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-109">
+                <input type="checkbox" class="theme-checkbox" id="check-109">
+                <div class="theme-text">
+                    <div class="theme-title">Показательные выражения и иррациональности <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Неравенства, содержащие показательные и иррациональные выражения</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-109">
+                    <div class="slider-value" id="value-109">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-110">
+                <input type="checkbox" class="theme-checkbox" id="check-110">
+                <div class="theme-text">
+                    <div class="theme-title">Логарифмы и показательные выражения <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Неравенства, содержащие логарифмические и показательные выражения</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-110">
+                    <div class="slider-value" id="value-110">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-111">
+                <input type="checkbox" class="theme-checkbox" id="check-111">
+                <div class="theme-text">
+                    <div class="theme-title">Логарифмы и иррациональности <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Неравенства, содержащие логарифмические и иррациональные выражения</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-111">
+                    <div class="slider-value" id="value-111">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-112">
+                <input type="checkbox" class="theme-checkbox" id="check-112">
+                <div class="theme-text">
+                    <div class="theme-title">Неравенства с тригонометрией <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Решение тригонометрических неравенств, метод интервалов на тригонометрическом круге</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-112">
+                    <div class="slider-value" id="value-112">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-113">
+                <input type="checkbox" class="theme-checkbox" id="check-113">
+                <div class="theme-text">
+                    <div class="theme-title">Неравенства с модулем <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Решение неравенств с модулем, метод интервалов для модулей</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-113">
+                    <div class="slider-value" id="value-113">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-114">
+                <input type="checkbox" class="theme-checkbox" id="check-114">
+                <div class="theme-text">
+                    <div class="theme-title">Другие неравенства смешанного типа <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Неравенства, содержащие комбинации различных типов выражений</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-114">
+                    <div class="slider-value" id="value-114">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-143">
+                <input type="checkbox" class="theme-checkbox" id="check-143">
+                <div class="theme-text">
+                    <div class="theme-title">Числа и их свойства <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Задачи на свойства натуральных чисел: делимость, остатки, цифры</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-143">
+                    <div class="slider-value" id="value-143">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-144">
+                <input type="checkbox" class="theme-checkbox" id="check-144">
+                <div class="theme-text">
+                    <div class="theme-title">Числовые наборы на карточках и досках <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Задачи на расстановку чисел, комбинации, перестановки чисел</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-144">
+                    <div class="slider-value" id="value-144">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-145">
+                <input type="checkbox" class="theme-checkbox" id="check-145">
+                <div class="theme-text">
+                    <div class="theme-title">Последовательности и прогрессии <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Задачи на числовые последовательности, арифметические и геометрические прогрессии</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-145">
+                    <div class="slider-value" id="value-145">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-146">
+                <input type="checkbox" class="theme-checkbox" id="check-146">
+                <div class="theme-text">
+                    <div class="theme-title">Сюжетные задачи: кино, театр, мотки верёвки <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Нестандартные сюжетные задачи, требующие математического моделирования</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-146">
+                    <div class="slider-value" id="value-146">0</div>
+                </div>
+            </div></div>
+            </div>
+
+            <!-- Геометрия -->
+            <div class="section">
+                <h2 class="section-title">Геометрия и стереометрия</h2>
+                <div id="geometry-list"><div class="theme-item" id="topic-11">
+                <input type="checkbox" class="theme-checkbox" id="check-11">
+                <div class="theme-text">
+                    <div class="theme-title">Куб <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Диагонали куба, расстояния между точками и прямыми, углы между прямыми и плоскостями в кубе</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-11">
+                    <div class="slider-value" id="value-11">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-12">
+                <input type="checkbox" class="theme-checkbox" id="check-12">
+                <div class="theme-text">
+                    <div class="theme-title">Прямоугольный параллелепипед <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Диагонали параллелепипеда, расстояния, углы, формулы объемов и площадей поверхностей</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-12">
+                    <div class="slider-value" id="value-12">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-13">
+                <input type="checkbox" class="theme-checkbox" id="check-13">
+                <div class="theme-text">
+                    <div class="theme-title">Элементы составных многогранников <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Определение элементов составных фигур: ребер, граней, вершин, диагоналей</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-13">
+                    <div class="slider-value" id="value-13">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-14">
+                <input type="checkbox" class="theme-checkbox" id="check-14">
+                <div class="theme-text">
+                    <div class="theme-title">Площадь поверхности составного многогранника <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Вычисление площадей поверхностей сложных многогранников, состоящих из нескольких простых тел</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-14">
+                    <div class="slider-value" id="value-14">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-15">
+                <input type="checkbox" class="theme-checkbox" id="check-15">
+                <div class="theme-text">
+                    <div class="theme-title">Объем составного многогранника <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Вычисление объемов сложных многогранников методом разбиения или дополнения</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-15">
+                    <div class="slider-value" id="value-15">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-16">
+                <input type="checkbox" class="theme-checkbox" id="check-16">
+                <div class="theme-text">
+                    <div class="theme-title">Призма <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Свойства призм, формулы объема и площади поверхности, прямые и наклонные призмы</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-16">
+                    <div class="slider-value" id="value-16">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-17">
+                <input type="checkbox" class="theme-checkbox" id="check-17">
+                <div class="theme-text">
+                    <div class="theme-title">Пирамида <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Свойства пирамид, формулы объема и площади поверхности, правильные пирамиды</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-17">
+                    <div class="slider-value" id="value-17">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-18">
+                <input type="checkbox" class="theme-checkbox" id="check-18">
+                <div class="theme-text">
+                    <div class="theme-title">Комбинации тел <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Задачи на взаимное расположение нескольких геометрических тел, вписанные и описанные фигуры</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-18">
+                    <div class="slider-value" id="value-18">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-19">
+                <input type="checkbox" class="theme-checkbox" id="check-19">
+                <div class="theme-text">
+                    <div class="theme-title">Цилиндр <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Свойства цилиндров, формулы объема и площади поверхности, осевые сечения</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-19">
+                    <div class="slider-value" id="value-19">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-20">
+                <input type="checkbox" class="theme-checkbox" id="check-20">
+                <div class="theme-text">
+                    <div class="theme-title">Конус <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Свойства конусов, формулы объема и площади поверхности, усеченные конусы</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-20">
+                    <div class="slider-value" id="value-20">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-21">
+                <input type="checkbox" class="theme-checkbox" id="check-21">
+                <div class="theme-text">
+                    <div class="theme-title">Шар <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Свойства шара и сферы, формулы объема и площади поверхности, сечения шара</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-21">
+                    <div class="slider-value" id="value-21">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-86">
+                <input type="checkbox" class="theme-checkbox" id="check-86">
+                <div class="theme-text">
+                    <div class="theme-title">Расстояние между прямыми и плоскостями <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Нахождение расстояний между скрещивающимися прямыми, параллельными плоскостями</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-86">
+                    <div class="slider-value" id="value-86">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-87">
+                <input type="checkbox" class="theme-checkbox" id="check-87">
+                <div class="theme-text">
+                    <div class="theme-title">Расстояние между точками, от точки до прямой <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Нахождение расстояний между точками, от точки до прямой в пространстве</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-87">
+                    <div class="slider-value" id="value-87">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-88">
+                <input type="checkbox" class="theme-checkbox" id="check-88">
+                <div class="theme-text">
+                    <div class="theme-title">Расстояние от точки до плоскости <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Нахождение расстояния от точки до плоскости в пространстве</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-88">
+                    <div class="slider-value" id="value-88">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-89">
+                <input type="checkbox" class="theme-checkbox" id="check-89">
+                <div class="theme-text">
+                    <div class="theme-title">Сечения пирамид <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Построение и исследование сечений пирамид различными плоскостями</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-89">
+                    <div class="slider-value" id="value-89">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-90">
+                <input type="checkbox" class="theme-checkbox" id="check-90">
+                <div class="theme-text">
+                    <div class="theme-title">Сечения призм <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Построение и исследование сечений призм различными плоскостями</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-90">
+                    <div class="slider-value" id="value-90">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-91">
+                <input type="checkbox" class="theme-checkbox" id="check-91">
+                <div class="theme-text">
+                    <div class="theme-title">Сечения параллелепипедов <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Построение и исследование сечений параллелепипедов</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-91">
+                    <div class="slider-value" id="value-91">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-92">
+                <input type="checkbox" class="theme-checkbox" id="check-92">
+                <div class="theme-text">
+                    <div class="theme-title">Угол между плоскостями <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Нахождение угла между двумя плоскостями в пространстве</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-92">
+                    <div class="slider-value" id="value-92">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-93">
+                <input type="checkbox" class="theme-checkbox" id="check-93">
+                <div class="theme-text">
+                    <div class="theme-title">Угол между плоскостями граней многогранника <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Нахождение двугранных углов многогранников</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-93">
+                    <div class="slider-value" id="value-93">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-94">
+                <input type="checkbox" class="theme-checkbox" id="check-94">
+                <div class="theme-text">
+                    <div class="theme-title">Угол между прямой и плоскостью <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Нахождение угла между прямой и плоскостью в пространстве</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-94">
+                    <div class="slider-value" id="value-94">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-95">
+                <input type="checkbox" class="theme-checkbox" id="check-95">
+                <div class="theme-text">
+                    <div class="theme-title">Угол между скрещивающимися прямыми <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Нахождение угла между скрещивающимися прямыми в пространстве</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-95">
+                    <div class="slider-value" id="value-95">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-96">
+                <input type="checkbox" class="theme-checkbox" id="check-96">
+                <div class="theme-text">
+                    <div class="theme-title">Объёмы многогранников <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Вычисление объемов сложных многогранников, составных фигур</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-96">
+                    <div class="slider-value" id="value-96">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-97">
+                <input type="checkbox" class="theme-checkbox" id="check-97">
+                <div class="theme-text">
+                    <div class="theme-title">Сечения круглых тел <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Построение и исследование сечений цилиндров, конусов, шаров</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-97">
+                    <div class="slider-value" id="value-97">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-98">
+                <input type="checkbox" class="theme-checkbox" id="check-98">
+                <div class="theme-text">
+                    <div class="theme-title">Круглые тела: цилиндр, конус, шар <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Задачи на комбинации круглых тел, вписанные и описанные фигуры</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-98">
+                    <div class="slider-value" id="value-98">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-99">
+                <input type="checkbox" class="theme-checkbox" id="check-99">
+                <div class="theme-text">
+                    <div class="theme-title">Комбинации фигур <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Задачи на взаимное расположение нескольких тел различной формы</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-99">
+                    <div class="slider-value" id="value-99">0</div>
+                </div>
+            </div></div>
+            </div>
+
+            <!-- Теория вероятностей -->
+            <div class="section">
+                <h2 class="section-title">Теория вероятностей и финансовая математика</h2>
+                <div id="probability-list"><div class="theme-item" id="topic-22">
+                <input type="checkbox" class="theme-checkbox" id="check-22">
+                <div class="theme-text">
+                    <div class="theme-title">Классическое определение вероятности <span style="color: #e74c3c; font-size: 0.9rem;">(низкая)</span></div>
+                    <div class="theme-description">Формула P(A)=m/n, задачи на игральные кости, карты, урны с шарами, комбинаторные методы</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-22">
+                    <div class="slider-value" id="value-22">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-23">
+                <input type="checkbox" class="theme-checkbox" id="check-23">
+                <div class="theme-text">
+                    <div class="theme-title">Теоремы о вероятностях событий <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Теоремы сложения и умножения вероятностей, формула полной вероятности, формула Байеса</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-23">
+                    <div class="slider-value" id="value-23">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-24">
+                <input type="checkbox" class="theme-checkbox" id="check-24">
+                <div class="theme-text">
+                    <div class="theme-title">Новые задания банка MathЕГЭ <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Задачи повышенной сложности из обновленного банка заданий ФИПИ</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-24">
+                    <div class="slider-value" id="value-24">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-115">
+                <input type="checkbox" class="theme-checkbox" id="check-115">
+                <div class="theme-text">
+                    <div class="theme-title">Вклады <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Задачи на банковские вклады с простыми и сложными процентами</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-115">
+                    <div class="slider-value" id="value-115">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-116">
+                <input type="checkbox" class="theme-checkbox" id="check-116">
+                <div class="theme-text">
+                    <div class="theme-title">Кредиты <span style="color: #e74c3c; font-size: 0.9rem;">(высокая)</span></div>
+                    <div class="theme-description">Задачи на кредиты с дифференцированными и аннуитетными платежами</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-116">
+                    <div class="slider-value" id="value-116">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-117">
+                <input type="checkbox" class="theme-checkbox" id="check-117">
+                <div class="theme-text">
+                    <div class="theme-title">Задачи на оптимальный выбор <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Задачи на выбор оптимального варианта: тарифы, упаковки, доставка</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-117">
+                    <div class="slider-value" id="value-117">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-118">
+                <input type="checkbox" class="theme-checkbox" id="check-118">
+                <div class="theme-text">
+                    <div class="theme-title">Разные задачи <span style="color: #e74c3c; font-size: 0.9rem;">(средняя)</span></div>
+                    <div class="theme-description">Разнообразные задачи финансовой математики</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-118">
+                    <div class="slider-value" id="value-118">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-129">
+                <input type="checkbox" class="theme-checkbox" id="check-129">
+                <div class="theme-text">
+                    <div class="theme-title">Уравнения с параметром <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Решение уравнений, содержащих параметр, исследование в зависимости от параметра</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-129">
+                    <div class="slider-value" id="value-129">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-130">
+                <input type="checkbox" class="theme-checkbox" id="check-130">
+                <div class="theme-text">
+                    <div class="theme-title">Уравнения с параметром, содержащие модуль <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Уравнения с параметром и модулем, различные случаи раскрытия модуля</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-130">
+                    <div class="slider-value" id="value-130">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-131">
+                <input type="checkbox" class="theme-checkbox" id="check-131">
+                <div class="theme-text">
+                    <div class="theme-title">Уравнения с параметром, содержащие радикалы <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Уравнения с параметром и корнями, ограничения области определения</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-131">
+                    <div class="slider-value" id="value-131">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-132">
+                <input type="checkbox" class="theme-checkbox" id="check-132">
+                <div class="theme-text">
+                    <div class="theme-title">Неравенства с параметром <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Решение неравенств, содержащих параметр</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-132">
+                    <div class="slider-value" id="value-132">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-133">
+                <input type="checkbox" class="theme-checkbox" id="check-133">
+                <div class="theme-text">
+                    <div class="theme-title">Системы с параметром <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Решение систем уравнений и неравенств с параметром</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-133">
+                    <div class="slider-value" id="value-133">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-134">
+                <input type="checkbox" class="theme-checkbox" id="check-134">
+                <div class="theme-text">
+                    <div class="theme-title">Расположение корней квадратного трехчлена <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Исследование расположения корней квадратного уравнения относительно заданных чисел</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-134">
+                    <div class="slider-value" id="value-134">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-135">
+                <input type="checkbox" class="theme-checkbox" id="check-135">
+                <div class="theme-text">
+                    <div class="theme-title">Использование симметрий <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Применение свойств симметрии при решении задач с параметром</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-135">
+                    <div class="slider-value" id="value-135">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-136">
+                <input type="checkbox" class="theme-checkbox" id="check-136">
+                <div class="theme-text">
+                    <div class="theme-title">Использование монотонности, оценок <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Применение свойств монотонности и оценок в задачах с параметром</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-136">
+                    <div class="slider-value" id="value-136">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-137">
+                <input type="checkbox" class="theme-checkbox" id="check-137">
+                <div class="theme-text">
+                    <div class="theme-title">Аналитическое решение уравнений и неравенств <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Точное аналитическое решение уравнений и неравенств с параметром</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-137">
+                    <div class="slider-value" id="value-137">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-138">
+                <input type="checkbox" class="theme-checkbox" id="check-138">
+                <div class="theme-text">
+                    <div class="theme-title">Аналитическое решение систем <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Точное аналитическое решение систем с параметром</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-138">
+                    <div class="slider-value" id="value-138">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-139">
+                <input type="checkbox" class="theme-checkbox" id="check-139">
+                <div class="theme-text">
+                    <div class="theme-title">Координаты (x, a) <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Метод координатной плоскости xOa для исследования задач с параметром</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-139">
+                    <div class="slider-value" id="value-139">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-140">
+                <input type="checkbox" class="theme-checkbox" id="check-140">
+                <div class="theme-text">
+                    <div class="theme-title">Уравнение окружности <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Задачи с параметром, связанные с уравнением окружности</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-140">
+                    <div class="slider-value" id="value-140">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-141">
+                <input type="checkbox" class="theme-checkbox" id="check-141">
+                <div class="theme-text">
+                    <div class="theme-title">Расстояние между точками <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Задачи с параметром на расстояние между точками</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-141">
+                    <div class="slider-value" id="value-141">0</div>
+                </div>
+            </div><div class="theme-item" id="topic-142">
+                <input type="checkbox" class="theme-checkbox" id="check-142">
+                <div class="theme-text">
+                    <div class="theme-title">Функции, зависящие от параметра <span style="color: #e74c3c; font-size: 0.9rem;">(очень высокая)</span></div>
+                    <div class="theme-description">Исследование функций, вид которых зависит от параметра</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="slider-142">
+                    <div class="slider-value" id="value-142">0</div>
+                </div>
+            </div></div>
+            </div>
+        </div>
+
+        <div class="control-panel">
+            <h2>Панель управления</h2>
+            
+            <div class="progress-summary">
+                <h3>Прогресс подготовки</h3>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="overall-progress" style="width: 0%;"></div>
+                </div>
+                <div class="progress-item">
+                    <span>Изучено тем:</span>
+                    <span id="completed-count">0 из 146</span>
+                </div>
+                <div class="progress-item">
+                    <span>Средняя оценка:</span>
+                    <span id="average-score">0</span>
+                </div>
+                <div class="progress-item">
+                    <span>Общий прогресс:</span>
+                    <span id="overall-percentage">0%</span>
+                </div>
+            </div>
+
+            <div class="control-buttons">
+                <button class="control-btn save-btn" id="save-btn">Сохранить прогресс</button>
+                <button class="control-btn reset-btn" id="reset-btn">Сбросить всё</button>
+            </div>
+
+            <button class="result-btn" id="calculate-btn">Оценить мои знания</button>
+
+            <div class="result-container" id="result-container">
+                <h3 class="result-title">Результаты оценки знаний</h3>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-value" id="total-themes">0</div>
+                        <div class="stat-label">Всего тем</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="studied-themes">0</div>
+                        <div class="stat-label">Изучено тем</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="avg-knowledge">0</div>
+                        <div class="stat-label">Средний балл</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="predicted-score">0</div>
+                        <div class="stat-label">Прогноз баллов ЕГЭ</div>
+                    </div>
+                </div>
+                <div id="recommendations">
+                    <p><strong>Рекомендации:</strong></p>
+                    <ul id="recommendations-list"></ul>
+                </div>
+            </div>
+
+            <div class="save-message" id="save-message">Прогресс загружен: 18.12.2025, 11:27:36</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Инструмент для подготовки к ЕГЭ по математике © 2023</p>
+        <p>Все темы соответствуют официальной спецификации ЕГЭ по математике (профильный уровень)</p>
+    </footer>
+
+    <script>
+        // Массив тем для ЕГЭ по математике
+        const egeTopics = [
+            // 1. ПЛАНИМЕТРИЯ
+            {
+                id: 1,
+                title: "Решение прямоугольного треугольника",
+                description: "Теорема Пифагора, тригонометрические соотношения, свойства медиан, высот, радиусы вписанной и описанной окружностей",
+                category: "planimetry",
+                difficulty: "средняя"
+            },
+            {
+                id: 2,
+                title: "Решение равнобедренного треугольника",
+                description: "Свойства равнобедренных треугольников, формулы высоты, площади, углов, радиусы окружностей",
+                category: "planimetry",
+                difficulty: "средняя"
+            },
+            {
+                id: 3,
+                title: "Треугольники общего вида",
+                description: "Теоремы синусов и косинусов, формулы площади, свойства медиан, биссектрис, высот",
+                category: "planimetry",
+                difficulty: "средняя"
+            },
+            {
+                id: 4,
+                title: "Параллелограммы",
+                description: "Свойства параллелограмма, ромба, прямоугольника, квадрата, формулы площадей и диагоналей",
+                category: "planimetry",
+                difficulty: "средняя"
+            },
+            {
+                id: 5,
+                title: "Трапеция",
+                description: "Свойства трапеций, средняя линия, формулы площади, вписанные и описанные окружности",
+                category: "planimetry",
+                difficulty: "средняя"
+            },
+            {
+                id: 6,
+                title: "Центральные и вписанные углы",
+                description: "Свойства углов в окружности, теоремы о вписанных углах, решение задач на окружности",
+                category: "planimetry",
+                difficulty: "средняя"
+            },
+            {
+                id: 7,
+                title: "Касательная, хорда, секущая",
+                description: "Свойства касательных, теоремы о хордах и секущих, задачи на окружности с касательными",
+                category: "planimetry",
+                difficulty: "средняя"
+            },
+            {
+                id: 8,
+                title: "Вписанные окружности",
+                description: "Радиус вписанной окружности, свойства касания, задачи на вписанные окружности в треугольники и многоугольники",
+                category: "planimetry",
+                difficulty: "высокая"
+            },
+            {
+                id: 9,
+                title: "Описанные окружности",
+                description: "Радиус описанной окружности, свойства описанных фигур, задачи на описанные окружности",
+                category: "planimetry",
+                difficulty: "высокая"
+            },
+
+            // 2. ВЕКТОРЫ
+            {
+                id: 10,
+                title: "Векторы и операции с ними",
+                description: "Координаты векторов, сложение, вычитание, умножение на число, скалярное произведение, длина вектора",
+                category: "vectors",
+                difficulty: "средняя"
+            },
+
+            // 3. СТЕРЕОМЕТРИЯ
+            {
+                id: 11,
+                title: "Куб",
+                description: "Диагонали куба, расстояния между точками и прямыми, углы между прямыми и плоскостями в кубе",
+                category: "stereometry",
+                difficulty: "средняя"
+            },
+            {
+                id: 12,
+                title: "Прямоугольный параллелепипед",
+                description: "Диагонали параллелепипеда, расстояния, углы, формулы объемов и площадей поверхностей",
+                category: "stereometry",
+                difficulty: "средняя"
+            },
+            {
+                id: 13,
+                title: "Элементы составных многогранников",
+                description: "Определение элементов составных фигур: ребер, граней, вершин, диагоналей",
+                category: "stereometry",
+                difficulty: "высокая"
+            },
+            {
+                id: 14,
+                title: "Площадь поверхности составного многогранника",
+                description: "Вычисление площадей поверхностей сложных многогранников, состоящих из нескольких простых тел",
+                category: "stereometry",
+                difficulty: "высокая"
+            },
+            {
+                id: 15,
+                title: "Объем составного многогранника",
+                description: "Вычисление объемов сложных многогранников методом разбиения или дополнения",
+                category: "stereometry",
+                difficulty: "высокая"
+            },
+            {
+                id: 16,
+                title: "Призма",
+                description: "Свойства призм, формулы объема и площади поверхности, прямые и наклонные призмы",
+                category: "stereometry",
+                difficulty: "средняя"
+            },
+            {
+                id: 17,
+                title: "Пирамида",
+                description: "Свойства пирамид, формулы объема и площади поверхности, правильные пирамиды",
+                category: "stereometry",
+                difficulty: "высокая"
+            },
+            {
+                id: 18,
+                title: "Комбинации тел",
+                description: "Задачи на взаимное расположение нескольких геометрических тел, вписанные и описанные фигуры",
+                category: "stereometry",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 19,
+                title: "Цилиндр",
+                description: "Свойства цилиндров, формулы объема и площади поверхности, осевые сечения",
+                category: "stereometry",
+                difficulty: "средняя"
+            },
+            {
+                id: 20,
+                title: "Конус",
+                description: "Свойства конусов, формулы объема и площади поверхности, усеченные конусы",
+                category: "stereometry",
+                difficulty: "средняя"
+            },
+            {
+                id: 21,
+                title: "Шар",
+                description: "Свойства шара и сферы, формулы объема и площади поверхности, сечения шара",
+                category: "stereometry",
+                difficulty: "средняя"
+            },
+
+            // 4. ТЕОРИЯ ВЕРОЯТНОСТЕЙ
+            {
+                id: 22,
+                title: "Классическое определение вероятности",
+                description: "Формула P(A)=m/n, задачи на игральные кости, карты, урны с шарами, комбинаторные методы",
+                category: "probability",
+                difficulty: "низкая"
+            },
+
+            // 5. ВЕРОЯТНОСТИ СЛОЖНЫХ СОБЫТИЙ
+            {
+                id: 23,
+                title: "Теоремы о вероятностях событий",
+                description: "Теоремы сложения и умножения вероятностей, формула полной вероятности, формула Байеса",
+                category: "complex_probability",
+                difficulty: "высокая"
+            },
+            {
+                id: 24,
+                title: "Новые задания банка MathЕГЭ",
+                description: "Задачи повышенной сложности из обновленного банка заданий ФИПИ",
+                category: "complex_probability",
+                difficulty: "очень высокая"
+            },
+
+            // 6. ПРОСТЕЙШИЕ УРАВНЕНИЯ
+            {
+                id: 25,
+                title: "Линейные, квадратные, кубические уравнения",
+                description: "Решение уравнений первой, второй и третьей степени, теорема Виета, дискриминант",
+                category: "simple_equations",
+                difficulty: "низкая"
+            },
+            {
+                id: 26,
+                title: "Рациональные уравнения",
+                description: "Решение уравнений с дробями, приведение к общему знаменателю, проверка корней",
+                category: "simple_equations",
+                difficulty: "средняя"
+            },
+            {
+                id: 27,
+                title: "Иррациональные уравнения",
+                description: "Решение уравнений с корнями, возведение в степень, проверка корней, ОДЗ",
+                category: "simple_equations",
+                difficulty: "средняя"
+            },
+            {
+                id: 28,
+                title: "Показательные уравнения",
+                description: "Решение уравнений с показательными функциями, приведение к одному основанию",
+                category: "simple_equations",
+                difficulty: "средняя"
+            },
+            {
+                id: 29,
+                title: "Логарифмические уравнения",
+                description: "Решение уравнений с логарифмами, свойства логарифмов, ОДЗ логарифмических уравнений",
+                category: "simple_equations",
+                difficulty: "средняя"
+            },
+            {
+                id: 30,
+                title: "Тригонометрические уравнения",
+                description: "Решение простейших тригонометрических уравнений, формулы приведения, отбор корней",
+                category: "simple_equations",
+                difficulty: "средняя"
+            },
+
+            // 7. ВЫЧИСЛЕНИЯ И ПРЕОБРАЗОВАНИЯ
+            {
+                id: 31,
+                title: "Преобразования числовых рациональных выражений",
+                description: "Упрощение числовых дробей, действия с рациональными числами",
+                category: "calculations",
+                difficulty: "низкая"
+            },
+            {
+                id: 32,
+                title: "Преобразования алгебраических выражений и дробей",
+                description: "Упрощение алгебраических выражений, действия с алгебраическими дробями",
+                category: "calculations",
+                difficulty: "низкая"
+            },
+            {
+                id: 33,
+                title: "Вычисление значений степенных выражений",
+                description: "Вычисление значений выражений со степенями, свойства степеней",
+                category: "calculations",
+                difficulty: "низкая"
+            },
+            {
+                id: 34,
+                title: "Действия со степенями",
+                description: "Умножение, деление, возведение в степень степеней, свойства степеней",
+                category: "calculations",
+                difficulty: "низкая"
+            },
+            {
+                id: 35,
+                title: "Преобразования числовых иррациональных выражений",
+                description: "Упрощение выражений с корнями, вынесение множителей из-под корня",
+                category: "calculations",
+                difficulty: "средняя"
+            },
+            {
+                id: 36,
+                title: "Преобразования буквенных иррациональных выражений",
+                description: "Упрощение алгебраических выражений с корнями, рационализация",
+                category: "calculations",
+                difficulty: "средняя"
+            },
+            {
+                id: 37,
+                title: "Преобразования числовых логарифмических выражений",
+                description: "Вычисление значений логарифмических выражений, свойства логарифмов",
+                category: "calculations",
+                difficulty: "средняя"
+            },
+            {
+                id: 38,
+                title: "Преобразования буквенных логарифмических выражений",
+                description: "Упрощение алгебраических выражений с логарифмами, свойства логарифмов",
+                category: "calculations",
+                difficulty: "высокая"
+            },
+            {
+                id: 39,
+                title: "Вычисление значений тригонометрических выражений",
+                description: "Вычисление значений тригонометрических выражений, основные тригонометрические формулы",
+                category: "calculations",
+                difficulty: "средняя"
+            },
+            {
+                id: 40,
+                title: "Преобразования числовых тригонометрических выражений",
+                description: "Упрощение числовых тригонометрических выражений, формулы приведения",
+                category: "calculations",
+                difficulty: "средняя"
+            },
+            {
+                id: 41,
+                title: "Преобразования буквенных тригонометрических выражений",
+                description: "Упрощение алгебраических выражений с тригонометрическими функциями",
+                category: "calculations",
+                difficulty: "высокая"
+            },
+
+            // 8. ПРОИЗВОДНАЯ И ПЕРВООБРАЗНАЯ
+            {
+                id: 42,
+                title: "Физический смысл производной",
+                description: "Производная как скорость изменения, задачи на движение, скорость, ускорение",
+                category: "derivative",
+                difficulty: "средняя"
+            },
+            {
+                id: 43,
+                title: "Геометрический смысл производной, касательная",
+                description: "Производная как угловой коэффициент касательной, уравнение касательной",
+                category: "derivative",
+                difficulty: "средняя"
+            },
+            {
+                id: 44,
+                title: "Применение производной к исследованию функций",
+                description: "Нахождение промежутков монотонности, экстремумов, наибольших и наименьших значений",
+                category: "derivative",
+                difficulty: "высокая"
+            },
+            {
+                id: 45,
+                title: "Первообразная",
+                description: "Нахождение первообразных, простейшие интегралы, формула Ньютона-Лейбница",
+                category: "derivative",
+                difficulty: "средняя"
+            },
+
+            // 9. ЗАДАЧИ С ПРИКЛАДНЫМ СОДЕРЖАНИЕМ
+            {
+                id: 46,
+                title: "Линейные уравнения и неравенства",
+                description: "Прикладные задачи, решаемые с помощью линейных уравнений и неравенств",
+                category: "applied",
+                difficulty: "низкая"
+            },
+            {
+                id: 47,
+                title: "Квадратные и степенные уравнения и неравенства",
+                description: "Прикладные задачи, решаемые с помощью квадратных и степенных уравнений",
+                category: "applied",
+                difficulty: "средняя"
+            },
+            {
+                id: 48,
+                title: "Рациональные уравнения и неравенства",
+                description: "Прикладные задачи, решаемые с помощью рациональных уравнений",
+                category: "applied",
+                difficulty: "средняя"
+            },
+            {
+                id: 49,
+                title: "Иррациональные уравнения и неравенства",
+                description: "Прикладные задачи, решаемые с помощью иррациональных уравнений",
+                category: "applied",
+                difficulty: "высокая"
+            },
+            {
+                id: 50,
+                title: "Показательные уравнения и неравенства",
+                description: "Прикладные задачи, решаемые с помощью показательных уравнений",
+                category: "applied",
+                difficulty: "средняя"
+            },
+            {
+                id: 51,
+                title: "Логарифмические уравнения и неравенства",
+                description: "Прикладные задачи, решаемые с помощью логарифмических уравнений",
+                category: "applied",
+                difficulty: "средняя"
+            },
+            {
+                id: 52,
+                title: "Тригонометрические уравнения и неравенства",
+                description: "Прикладные задачи, решаемые с помощью тригонометрических уравнений",
+                category: "applied",
+                difficulty: "высокая"
+            },
+            {
+                id: 53,
+                title: "Разные задачи",
+                description: "Разнообразные прикладные задачи смешанного типа",
+                category: "applied",
+                difficulty: "высокая"
+            },
+
+            // 10. ТЕКСТОВЫЕ ЗАДАЧИ
+            {
+                id: 54,
+                title: "Задачи на проценты, сплавы и смеси",
+                description: "Решение текстовых задач на проценты, концентрацию, сплавы и смеси",
+                category: "text_tasks",
+                difficulty: "средняя"
+            },
+            {
+                id: 55,
+                title: "Задачи на движение по прямой",
+                description: "Задачи на движение по прямой: навстречу, вдогонку, с отставанием",
+                category: "text_tasks",
+                difficulty: "средняя"
+            },
+            {
+                id: 56,
+                title: "Задачи на движение по окружности",
+                description: "Задачи на движение по круговой трассе, замыкание круга",
+                category: "text_tasks",
+                difficulty: "высокая"
+            },
+            {
+                id: 57,
+                title: "Задачи на движение по воде",
+                description: "Задачи на движение по реке: скорость течения, собственная скорость",
+                category: "text_tasks",
+                difficulty: "средняя"
+            },
+            {
+                id: 58,
+                title: "Задачи на совместную работу",
+                description: "Задачи на производительность, совместную работу, заполнение бассейнов",
+                category: "text_tasks",
+                difficulty: "средняя"
+            },
+            {
+                id: 59,
+                title: "Задачи на прогрессии",
+                description: "Задачи на арифметические и геометрические прогрессии",
+                category: "text_tasks",
+                difficulty: "средняя"
+            },
+
+            // 11. ГРАФИКИ ФУНКЦИЙ
+            {
+                id: 60,
+                title: "Линейные функции",
+                description: "Графики линейных функций, угловой коэффициент, точки пересечения с осями",
+                category: "graphs",
+                difficulty: "низкая"
+            },
+            {
+                id: 61,
+                title: "Параболы",
+                description: "Графики квадратичных функций, вершина параболы, ось симметрии",
+                category: "graphs",
+                difficulty: "низкая"
+            },
+            {
+                id: 62,
+                title: "Гиперболы",
+                description: "Графики обратной пропорциональности, асимптоты, свойства",
+                category: "graphs",
+                difficulty: "средняя"
+            },
+            {
+                id: 63,
+                title: "Корни",
+                description: "Графики функций с корнями, область определения, свойства",
+                category: "graphs",
+                difficulty: "средняя"
+            },
+            {
+                id: 64,
+                title: "Показательные и логарифмические функции",
+                description: "Графики показательных и логарифмических функций, свойства, асимптоты",
+                category: "graphs",
+                difficulty: "средняя"
+            },
+            {
+                id: 65,
+                title: "Тригонометрические функции",
+                description: "Графики синуса, косинуса, тангенса, период, амплитуда, сдвиги",
+                category: "graphs",
+                difficulty: "средняя"
+            },
+            {
+                id: 66,
+                title: "Комбинированные задачи",
+                description: "Задачи на комбинации графиков функций, пересечения, общие точки",
+                category: "graphs",
+                difficulty: "высокая"
+            },
+
+            // 12. НАИБОЛЬШЕЕ И НАИМЕНЬШЕЕ ЗНАЧЕНИЕ
+            {
+                id: 67,
+                title: "Исследование функций без помощи производной",
+                description: "Нахождение экстремумов элементарными методами, свойства функций",
+                category: "extreme",
+                difficulty: "средняя"
+            },
+            {
+                id: 68,
+                title: "Исследование степенных и иррациональных функций",
+                description: "Нахождение наибольших и наименьших значений степенных и иррациональных функций",
+                category: "extreme",
+                difficulty: "высокая"
+            },
+            {
+                id: 69,
+                title: "Исследование частных",
+                description: "Нахождение экстремумов функций, представленных в виде частного",
+                category: "extreme",
+                difficulty: "высокая"
+            },
+            {
+                id: 70,
+                title: "Исследование произведений",
+                description: "Нахождение экстремумов функций, представленных в виде произведения",
+                category: "extreme",
+                difficulty: "высокая"
+            },
+            {
+                id: 71,
+                title: "Исследование показательных и логарифмических функций",
+                description: "Нахождение наибольших и наименьших значений показательных и логарифмических функций",
+                category: "extreme",
+                difficulty: "высокая"
+            },
+            {
+                id: 72,
+                title: "Исследование тригонометрических функций",
+                description: "Нахождение наибольших и наименьших значений тригонометрических функций",
+                category: "extreme",
+                difficulty: "высокая"
+            },
+
+            // 13. УРАВНЕНИЯ (РАЗВЕРНУТЫЙ ОТВЕТ)
+            {
+                id: 73,
+                title: "Показательные уравнения",
+                description: "Сложные показательные уравнения, требующие развернутого решения",
+                category: "equations_detailed",
+                difficulty: "высокая"
+            },
+            {
+                id: 74,
+                title: "Рациональные уравнения",
+                description: "Сложные рациональные уравнения, требующие развернутого решения",
+                category: "equations_detailed",
+                difficulty: "средняя"
+            },
+            {
+                id: 75,
+                title: "Иррациональные уравнения",
+                description: "Сложные иррациональные уравнения, требующие развернутого решения",
+                category: "equations_detailed",
+                difficulty: "высокая"
+            },
+            {
+                id: 76,
+                title: "Логарифмические уравнения",
+                description: "Сложные логарифмические уравнения, требующие развернутого решения",
+                category: "equations_detailed",
+                difficulty: "высокая"
+            },
+            {
+                id: 77,
+                title: "Тригонометрические уравнения, сводимые к квадратным",
+                description: "Тригонометрические уравнения, решаемые с помощью замены переменной",
+                category: "equations_detailed",
+                difficulty: "высокая"
+            },
+            {
+                id: 78,
+                title: "Тригонометрические уравнения, сводимые к однородным",
+                description: "Однородные тригонометрические уравнения первой и второй степени",
+                category: "equations_detailed",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 79,
+                title: "Тригонометрические уравнения, разложение на множители",
+                description: "Тригонометрические уравнения, решаемые методом разложения на множители",
+                category: "equations_detailed",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 80,
+                title: "Тригонометрические уравнения, исследование ОДЗ",
+                description: "Тригонометрические уравнения с ограничениями области определения",
+                category: "equations_detailed",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 81,
+                title: "Тригонометрические уравнения, разные задачи",
+                description: "Разнообразные сложные тригонометрические уравнения",
+                category: "equations_detailed",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 82,
+                title: "Тригонометрия и иррациональности",
+                description: "Уравнения, содержащие тригонометрические и иррациональные выражения",
+                category: "equations_detailed",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 83,
+                title: "Тригонометрия и логарифмы",
+                description: "Уравнения, содержащие тригонометрические и логарифмические выражения",
+                category: "equations_detailed",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 84,
+                title: "Тригонометрия и показательные выражения",
+                description: "Уравнения, содержащие тригонометрические и показательные выражения",
+                category: "equations_detailed",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 85,
+                title: "Другие уравнения смешанного типа",
+                description: "Уравнения, содержащие комбинации различных типов функций",
+                category: "equations_detailed",
+                difficulty: "очень высокая"
+            },
+
+            // 14. СТЕРЕОМЕТРИЧЕСКАЯ ЗАДАЧА
+            {
+                id: 86,
+                title: "Расстояние между прямыми и плоскостями",
+                description: "Нахождение расстояний между скрещивающимися прямыми, параллельными плоскостями",
+                category: "stereometry_detailed",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 87,
+                title: "Расстояние между точками, от точки до прямой",
+                description: "Нахождение расстояний между точками, от точки до прямой в пространстве",
+                category: "stereometry_detailed",
+                difficulty: "высокая"
+            },
+            {
+                id: 88,
+                title: "Расстояние от точки до плоскости",
+                description: "Нахождение расстояния от точки до плоскости в пространстве",
+                category: "stereometry_detailed",
+                difficulty: "высокая"
+            },
+            {
+                id: 89,
+                title: "Сечения пирамид",
+                description: "Построение и исследование сечений пирамид различными плоскостями",
+                category: "stereometry_detailed",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 90,
+                title: "Сечения призм",
+                description: "Построение и исследование сечений призм различными плоскостями",
+                category: "stereometry_detailed",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 91,
+                title: "Сечения параллелепипедов",
+                description: "Построение и исследование сечений параллелепипедов",
+                category: "stereometry_detailed",
+                difficulty: "высокая"
+            },
+            {
+                id: 92,
+                title: "Угол между плоскостями",
+                description: "Нахождение угла между двумя плоскостями в пространстве",
+                category: "stereometry_detailed",
+                difficulty: "высокая"
+            },
+            {
+                id: 93,
+                title: "Угол между плоскостями граней многогранника",
+                description: "Нахождение двугранных углов многогранников",
+                category: "stereometry_detailed",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 94,
+                title: "Угол между прямой и плоскостью",
+                description: "Нахождение угла между прямой и плоскостью в пространстве",
+                category: "stereometry_detailed",
+                difficulty: "высокая"
+            },
+            {
+                id: 95,
+                title: "Угол между скрещивающимися прямыми",
+                description: "Нахождение угла между скрещивающимися прямыми в пространстве",
+                category: "stereometry_detailed",
+                difficulty: "высокая"
+            },
+            {
+                id: 96,
+                title: "Объёмы многогранников",
+                description: "Вычисление объемов сложных многогранников, составных фигур",
+                category: "stereometry_detailed",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 97,
+                title: "Сечения круглых тел",
+                description: "Построение и исследование сечений цилиндров, конусов, шаров",
+                category: "stereometry_detailed",
+                difficulty: "высокая"
+            },
+            {
+                id: 98,
+                title: "Круглые тела: цилиндр, конус, шар",
+                description: "Задачи на комбинации круглых тел, вписанные и описанные фигуры",
+                category: "stereometry_detailed",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 99,
+                title: "Комбинации фигур",
+                description: "Задачи на взаимное расположение нескольких тел различной формы",
+                category: "stereometry_detailed",
+                difficulty: "очень высокая"
+            },
+
+            // 15. НЕРАВЕНСТВА
+            {
+                id: 100,
+                title: "Неравенства, содержащие радикалы",
+                description: "Решение иррациональных неравенств, метод интервалов для радикалов",
+                category: "inequalities",
+                difficulty: "высокая"
+            },
+            {
+                id: 101,
+                title: "Рациональные неравенства",
+                description: "Решение рациональных неравенств, метод интервалов",
+                category: "inequalities",
+                difficulty: "средняя"
+            },
+            {
+                id: 102,
+                title: "Показательные неравенства",
+                description: "Решение показательных неравенств, свойства показательных функций",
+                category: "inequalities",
+                difficulty: "высокая"
+            },
+            {
+                id: 103,
+                title: "Неравенства рациональные относительно показательной функции",
+                description: "Неравенства, содержащие выражения вида f(e^x)",
+                category: "inequalities",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 104,
+                title: "Логарифмические неравенства первой и второй степени",
+                description: "Простые и сложные логарифмические неравенства",
+                category: "inequalities",
+                difficulty: "высокая"
+            },
+            {
+                id: 105,
+                title: "Неравенства рациональные относительно логарифмической функции",
+                description: "Неравенства, содержащие выражения вида f(ln x)",
+                category: "inequalities",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 106,
+                title: "Неравенства с логарифмами по переменному основанию",
+                description: "Логарифмические неравенства с основанием, зависящим от переменной",
+                category: "inequalities",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 107,
+                title: "Неравенства с логарифмами по переменному основанию, применение рационализации",
+                description: "Метод рационализации для логарифмических неравенств",
+                category: "inequalities",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 108,
+                title: "Логарифмические неравенства, разные задачи",
+                description: "Разнообразные сложные логарифмические неравенства",
+                category: "inequalities",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 109,
+                title: "Показательные выражения и иррациональности",
+                description: "Неравенства, содержащие показательные и иррациональные выражения",
+                category: "inequalities",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 110,
+                title: "Логарифмы и показательные выражения",
+                description: "Неравенства, содержащие логарифмические и показательные выражения",
+                category: "inequalities",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 111,
+                title: "Логарифмы и иррациональности",
+                description: "Неравенства, содержащие логарифмические и иррациональные выражения",
+                category: "inequalities",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 112,
+                title: "Неравенства с тригонометрией",
+                description: "Решение тригонометрических неравенств, метод интервалов на тригонометрическом круге",
+                category: "inequalities",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 113,
+                title: "Неравенства с модулем",
+                description: "Решение неравенств с модулем, метод интервалов для модулей",
+                category: "inequalities",
+                difficulty: "высокая"
+            },
+            {
+                id: 114,
+                title: "Другие неравенства смешанного типа",
+                description: "Неравенства, содержащие комбинации различных типов выражений",
+                category: "inequalities",
+                difficulty: "очень высокая"
+            },
+
+            // 16. ФИНАНСОВАЯ МАТЕМАТИКА
+            {
+                id: 115,
+                title: "Вклады",
+                description: "Задачи на банковские вклады с простыми и сложными процентами",
+                category: "finance",
+                difficulty: "средняя"
+            },
+            {
+                id: 116,
+                title: "Кредиты",
+                description: "Задачи на кредиты с дифференцированными и аннуитетными платежами",
+                category: "finance",
+                difficulty: "высокая"
+            },
+            {
+                id: 117,
+                title: "Задачи на оптимальный выбор",
+                description: "Задачи на выбор оптимального варианта: тарифы, упаковки, доставка",
+                category: "finance",
+                difficulty: "средняя"
+            },
+            {
+                id: 118,
+                title: "Разные задачи",
+                description: "Разнообразные задачи финансовой математики",
+                category: "finance",
+                difficulty: "средняя"
+            },
+
+            // 17. ПЛАНИМЕТРИЧЕСКАЯ ЗАДАЧА
+            {
+                id: 119,
+                title: "Треугольники и их свойства",
+                description: "Сложные задачи на свойства треугольников, теоремы, соотношения",
+                category: "planimetry_detailed",
+                difficulty: "высокая"
+            },
+            {
+                id: 120,
+                title: "Четырехугольники и их свойства",
+                description: "Сложные задачи на свойства четырехугольников, диагонали, углы",
+                category: "planimetry_detailed",
+                difficulty: "высокая"
+            },
+            {
+                id: 121,
+                title: "Окружности и системы окружностей",
+                description: "Задачи на системы окружностей, взаимное расположение, касание",
+                category: "planimetry_detailed",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 122,
+                title: "Вписанные окружности и треугольники",
+                description: "Задачи на вписанные окружности в треугольники, радиус, точки касания",
+                category: "planimetry_detailed",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 123,
+                title: "Описанные окружности и треугольники",
+                description: "Задачи на описанные окружности около треугольников, радиус, свойства",
+                category: "planimetry_detailed",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 124,
+                title: "Окружности и треугольники, разные задачи",
+                description: "Разнообразные сложные задачи на окружности и треугольники",
+                category: "planimetry_detailed",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 125,
+                title: "Вписанные окружности и четырехугольники",
+                description: "Задачи на вписанные окружности в четырехугольники, условия вписанности",
+                category: "planimetry_detailed",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 126,
+                title: "Описанные окружности и четырехугольники",
+                description: "Задачи на описанные окружности около четырехугольников, условия описанности",
+                category: "planimetry_detailed",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 127,
+                title: "Окружности и четырехугольники, разные задачи",
+                description: "Разнообразные сложные задачи на окружности и четырехугольники",
+                category: "planimetry_detailed",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 128,
+                title: "Разные задачи о многоугольниках",
+                description: "Задачи на различные многоугольники, их свойства и соотношения",
+                category: "planimetry_detailed",
+                difficulty: "очень высокая"
+            },
+
+            // 18. ЗАДАЧА С ПАРАМЕТРОМ
+            {
+                id: 129,
+                title: "Уравнения с параметром",
+                description: "Решение уравнений, содержащих параметр, исследование в зависимости от параметра",
+                category: "parameters",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 130,
+                title: "Уравнения с параметром, содержащие модуль",
+                description: "Уравнения с параметром и модулем, различные случаи раскрытия модуля",
+                category: "parameters",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 131,
+                title: "Уравнения с параметром, содержащие радикалы",
+                description: "Уравнения с параметром и корнями, ограничения области определения",
+                category: "parameters",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 132,
+                title: "Неравенства с параметром",
+                description: "Решение неравенств, содержащих параметр",
+                category: "parameters",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 133,
+                title: "Системы с параметром",
+                description: "Решение систем уравнений и неравенств с параметром",
+                category: "parameters",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 134,
+                title: "Расположение корней квадратного трехчлена",
+                description: "Исследование расположения корней квадратного уравнения относительно заданных чисел",
+                category: "parameters",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 135,
+                title: "Использование симметрий",
+                description: "Применение свойств симметрии при решении задач с параметром",
+                category: "parameters",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 136,
+                title: "Использование монотонности, оценок",
+                description: "Применение свойств монотонности и оценок в задачах с параметром",
+                category: "parameters",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 137,
+                title: "Аналитическое решение уравнений и неравенств",
+                description: "Точное аналитическое решение уравнений и неравенств с параметром",
+                category: "parameters",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 138,
+                title: "Аналитическое решение систем",
+                description: "Точное аналитическое решение систем с параметром",
+                category: "parameters",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 139,
+                title: "Координаты (x, a)",
+                description: "Метод координатной плоскости xOa для исследования задач с параметром",
+                category: "parameters",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 140,
+                title: "Уравнение окружности",
+                description: "Задачи с параметром, связанные с уравнением окружности",
+                category: "parameters",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 141,
+                title: "Расстояние между точками",
+                description: "Задачи с параметром на расстояние между точками",
+                category: "parameters",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 142,
+                title: "Функции, зависящие от параметра",
+                description: "Исследование функций, вид которых зависит от параметра",
+                category: "parameters",
+                difficulty: "очень высокая"
+            },
+
+            // 19. ЧИСЛА И ИХ СВОЙСТВА
+            {
+                id: 143,
+                title: "Числа и их свойства",
+                description: "Задачи на свойства натуральных чисел: делимость, остатки, цифры",
+                category: "numbers",
+                difficulty: "высокая"
+            },
+            {
+                id: 144,
+                title: "Числовые наборы на карточках и досках",
+                description: "Задачи на расстановку чисел, комбинации, перестановки чисел",
+                category: "numbers",
+                difficulty: "очень высокая"
+            },
+            {
+                id: 145,
+                title: "Последовательности и прогрессии",
+                description: "Задачи на числовые последовательности, арифметические и геометрические прогрессии",
+                category: "numbers",
+                difficulty: "высокая"
+            },
+            {
+                id: 146,
+                title: "Сюжетные задачи: кино, театр, мотки верёвки",
+                description: "Нестандартные сюжетные задачи, требующие математического моделирования",
+                category: "numbers",
+                difficulty: "очень высокая"
+            }
+        ];
+
+        // Состояние приложения
+        const state = {
+            topics: [],
+            savedData: null
+        };
+
+        // Инициализация при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+            loadSavedData();
+        });
+
+        // Инициализация приложения
+        function initializeApp() {
+            // Сохраняем темы в состояние
+            state.topics = egeTopics.map(topic => ({
+                ...topic,
+                checked: false,
+                sliderValue: 0
+            }));
+
+            // Создаем элементы для каждой темы
+            renderTopics();
+
+            // Назначаем обработчики событий
+            document.getElementById('calculate-btn').addEventListener('click', calculateResults);
+            document.getElementById('save-btn').addEventListener('click', saveProgress);
+            document.getElementById('reset-btn').addEventListener('click', resetAll);
+
+            // Обновляем прогресс
+            updateProgress();
+        }
+
+        // Отображение всех тем
+        function renderTopics() {
+            const planimetryList = document.getElementById('planimetry-list');
+            const algebraList = document.getElementById('algebra-list');
+            const geometryList = document.getElementById('geometry-list');
+            const probabilityList = document.getElementById('probability-list');
+
+            // Очищаем списки
+            planimetryList.innerHTML = '';
+            algebraList.innerHTML = '';
+            geometryList.innerHTML = '';
+            probabilityList.innerHTML = '';
+
+            // Добавляем темы в соответствующие разделы
+            state.topics.forEach(topic => {
+                const topicElement = createTopicElement(topic);
+                
+                // Распределяем по категориям
+                switch(topic.category) {
+                    case 'planimetry':
+                    case 'planimetry_detailed':
+                        planimetryList.appendChild(topicElement);
+                        break;
+                    case 'vectors':
+                    case 'simple_equations':
+                    case 'calculations':
+                    case 'derivative':
+                    case 'applied':
+                    case 'text_tasks':
+                    case 'graphs':
+                    case 'extreme':
+                    case 'equations_detailed':
+                    case 'inequalities':
+                    case 'numbers':
+                        algebraList.appendChild(topicElement);
+                        break;
+                    case 'stereometry':
+                    case 'stereometry_detailed':
+                        geometryList.appendChild(topicElement);
+                        break;
+                    case 'probability':
+                    case 'complex_probability':
+                    case 'finance':
+                    case 'parameters':
+                        probabilityList.appendChild(topicElement);
+                        break;
+                    default:
+                        algebraList.appendChild(topicElement);
+                }
+            });
+        }
+
+        // Создание элемента темы
+        function createTopicElement(topic) {
+            const div = document.createElement('div');
+            div.className = 'theme-item';
+            div.id = `topic-${topic.id}`;
+            
+            div.innerHTML = `
+                <input type="checkbox" class="theme-checkbox" id="check-${topic.id}" ${topic.checked ? 'checked' : ''}>
+                <div class="theme-text">
+                    <div class="theme-title">${topic.title} <span style="color: #e74c3c; font-size: 0.9rem;">(${topic.difficulty})</span></div>
+                    <div class="theme-description">${topic.description}</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-label">Уровень знаний:</div>
+                    <input type="range" min="0" max="10" value="${topic.sliderValue}" class="slider" id="slider-${topic.id}">
+                    <div class="slider-value" id="value-${topic.id}">${topic.sliderValue}</div>
+                </div>
+            `;
+            
+            // Добавляем обработчики событий
+            const checkbox = div.querySelector(`#check-${topic.id}`);
+            const slider = div.querySelector(`#slider-${topic.id}`);
+            const valueDisplay = div.querySelector(`#value-${topic.id}`);
+            
+            checkbox.addEventListener('change', function() {
+                topic.checked = this.checked;
+                updateProgress();
+            });
+            
+            slider.addEventListener('input', function() {
+                const value = this.value;
+                valueDisplay.textContent = value;
+                topic.sliderValue = parseInt(value);
+                updateProgress();
+            });
+            
+            return div;
+        }
+
+        // Обновление панели прогресса
+        function updateProgress() {
+            const completed = state.topics.filter(topic => topic.checked).length;
+            const total = state.topics.length;
+            const completedPercentage = total > 0 ? Math.round((completed / total) * 100) : 0;
+            
+            // Рассчитываем среднюю оценку только по отмеченным темам
+            const checkedTopics = state.topics.filter(topic => topic.checked);
+            const averageScore = checkedTopics.length > 0 
+                ? (checkedTopics.reduce((sum, topic) => sum + topic.sliderValue, 0) / checkedTopics.length).toFixed(1)
+                : 0;
+            
+            // Обновляем отображение
+            document.getElementById('completed-count').textContent = `${completed} из ${total}`;
+            document.getElementById('average-score').textContent = averageScore;
+            document.getElementById('overall-percentage').textContent = `${completedPercentage}%`;
+            
+            // Обновляем прогресс-бар
+            const progressBar = document.getElementById('overall-progress');
+            progressBar.style.width = `${completedPercentage}%`;
+        }
+
+        // Расчет результатов
+        function calculateResults() {
+            const totalTopics = state.topics.length;
+            const studiedTopics = state.topics.filter(topic => topic.checked).length;
+            const studiedPercentage = totalTopics > 0 ? Math.round((studiedTopics / totalTopics) * 100) : 0;
+            
+            // Средний уровень знаний по изученным темам
+            const checkedTopics = state.topics.filter(topic => topic.checked);
+            const avgKnowledge = checkedTopics.length > 0 
+                ? (checkedTopics.reduce((sum, topic) => sum + topic.sliderValue, 0) / checkedTopics.length).toFixed(1)
+                : 0;
+            
+            // Прогноз баллов на ЕГЭ (максимум 100)
+            const predictedScore = Math.min(100, Math.round(studiedPercentage * avgKnowledge / 10));
+            
+            // Обновляем отображение результатов
+            document.getElementById('total-themes').textContent = totalTopics;
+            document.getElementById('studied-themes').textContent = studiedTopics;
+            document.getElementById('avg-knowledge').textContent = avgKnowledge;
+            document.getElementById('predicted-score').textContent = predictedScore;
+            
+            // Генерируем рекомендации
+            generateRecommendations(checkedTopics);
+            
+            // Показываем контейнер с результатами
+            const resultContainer = document.getElementById('result-container');
+            resultContainer.classList.add('show');
+            
+            // Прокручиваем к результатам
+            resultContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Генерация рекомендаций
+        function generateRecommendations(checkedTopics) {
+            const recommendationsList = document.getElementById('recommendations-list');
+            recommendationsList.innerHTML = '';
+            
+            // Рекомендации по количеству изученных тем
+            const studiedPercentage = Math.round((checkedTopics.length / state.topics.length) * 100);
+            
+            if (studiedPercentage < 30) {
+                addRecommendation("Изучено менее 30% тем. Рекомендуется увеличить темп подготовки.");
+            } else if (studiedPercentage < 60) {
+                addRecommendation("Изучено около половины тем. Продолжайте в том же темпе.");
+            } else if (studiedPercentage < 90) {
+                addRecommendation("Изучено больше половины тем. Вы на правильном пути!");
+            } else {
+                addRecommendation("Изучены почти все темы. Отличный результат!");
+            }
+            
+            // Рекомендации по сложности тем
+            const difficultTopics = state.topics.filter(topic => 
+                !topic.checked && (topic.difficulty === "высокая" || topic.difficulty === "очень высокая")
+            );
+            
+            if (difficultTopics.length > 0) {
+                addRecommendation(`Обратите внимание на ${difficultTopics.length} сложных тем, которые еще не изучены.`);
+                
+                // Добавляем 3 самые сложные не изученные темы
+                const topDifficult = difficultTopics.slice(0, 3);
+                topDifficult.forEach(topic => {
+                    addRecommendation(`• ${topic.title} (${topic.difficulty} сложность)`);
+                });
+            }
+            
+            // Рекомендации по низким оценкам
+            const lowRatedTopics = checkedTopics.filter(topic => topic.sliderValue < 5);
+            if (lowRatedTopics.length > 0) {
+                addRecommendation(`У вас ${lowRatedTopics.length} тем с оценкой ниже 5. Рекомендуется повторить эти темы.`);
+            }
+            
+            // Общие рекомендации
+            addRecommendation("Регулярно решайте пробные варианты ЕГЭ для закрепления материала.");
+            addRecommendation("Составьте график повторения изученных тем перед экзаменом.");
+        }
+
+        function addRecommendation(text) {
+            const li = document.createElement('li');
+            li.textContent = text;
+            document.getElementById('recommendations-list').appendChild(li);
+        }
+
+        // Сохранение прогресса в localStorage
+        function saveProgress() {
+            const saveData = {
+                topics: state.topics.map(topic => ({
+                    id: topic.id,
+                    checked: topic.checked,
+                    sliderValue: topic.sliderValue
+                })),
+                savedAt: new Date().toISOString()
+            };
+            
+            localStorage.setItem('egeMathProgress', JSON.stringify(saveData));
+            state.savedData = saveData;
+            
+            // Показываем сообщение об успешном сохранении
+            const saveMessage = document.getElementById('save-message');
+            saveMessage.textContent = `Прогресс сохранен: ${new Date().toLocaleString()}`;
+            saveMessage.classList.add('show');
+            
+            // Скрываем сообщение через 3 секунды
+            setTimeout(() => {
+                saveMessage.classList.remove('show');
+            }, 3000);
+        }
+
+        // Загрузка сохраненных данных
+        function loadSavedData() {
+            const savedData = localStorage.getItem('egeMathProgress');
+            if (savedData) {
+                try {
+                    const parsedData = JSON.parse(savedData);
+                    state.savedData = parsedData;
+                    
+                    // Восстанавливаем состояние тем
+                    parsedData.topics.forEach(savedTopic => {
+                        const topicIndex = state.topics.findIndex(topic => topic.id === savedTopic.id);
+                        if (topicIndex !== -1) {
+                            state.topics[topicIndex].checked = savedTopic.checked;
+                            state.topics[topicIndex].sliderValue = savedTopic.sliderValue;
+                        }
+                    });
+                    
+                    // Перерисовываем темы
+                    renderTopics();
+                    updateProgress();
+                    
+                    // Показываем сообщение о загрузке
+                    const saveMessage = document.getElementById('save-message');
+                    saveMessage.textContent = `Прогресс загружен: ${new Date(parsedData.savedAt).toLocaleString()}`;
+                    saveMessage.classList.add('show');
+                    
+                    // Скрываем сообщение через 3 секунды
+                    setTimeout(() => {
+                        saveMessage.classList.remove('show');
+                    }, 3000);
+                } catch (e) {
+                    console.error('Ошибка при загрузке сохраненных данных:', e);
+                }
+            }
+        }
+
+        // Сброс всех данных
+        function resetAll() {
+            if (confirm("Вы уверены, что хотите сбросить весь прогресс? Это действие нельзя отменить.")) {
+                // Сбрасываем состояние тем
+                state.topics.forEach(topic => {
+                    topic.checked = false;
+                    topic.sliderValue = 0;
+                });
+                
+                // Перерисовываем темы
+                renderTopics();
+                updateProgress();
+                
+                // Скрываем результаты
+                document.getElementById('result-container').classList.remove('show');
+                
+                // Очищаем сохраненные данные
+                localStorage.removeItem('egeMathProgress');
+                state.savedData = null;
+            }
+        }
+    </script>
+
+</body></html>
